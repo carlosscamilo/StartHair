@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<h:outputStylesheet library="css" name="cadastro.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Start Hair</title>
+</h:head>
+<h:body>
+	<h1 id="h1_cadastro">Cadastro</h1>
+	<h:form>
+		<div class="container">
+			<h:outputText class="label_cadastro" value="Nome" />
+			<h:inputText styleClass="input_cadastro" required="true"
+				requiredMessage="Informe seu Nome" />
+			<h:outputText class="label_cadastro" value="CPF" />
+			<h:inputText styleClass="input_cadastro" required="true"
+				requiredMessage="Informe seu CPF" />
+			<h:outputText class="label_cadastro" value="Sexo" />
+
+			<h:selectOneMenu styleClass="input_cadastro">
+
+				<f:selectItem itemValue="Masculino" />
+				<f:selectItem itemValue="Feminino" />
+				<f:selectItem itemValue="Outros" />
+			</h:selectOneMenu>
+			<h:outputText class="label_cadastro" value="Data" />
+			<input class="input_cadastro" type="date"></input>
+
+			<h:outputText class="label_cadastro" value="Email" />
+			<h:inputText type="email" styleClass="input_cadastro" required="true"
+				requiredMessage="Informe seu Email" />
+
+
+			<h:outputText class="label_cadastro" value="Senha" />
+			<h:inputSecret styleClass="input_cadastro" required="true"
+				requiredMessage="Senha" />
+			<h:outputText class="label_cadastro" value="Telefone" />
+			<h:inputText styleClass="input_cadastro" required="true"
+				requiredMessage="Informe seu Telefone" />
+			<h:outputText class="label_cadastro" value="Endereço" />
+			<h:inputText styleClass="input_cadastro" required="true"
+				requiredMessage="Informe seu Endereço" />
+
+			<h:outputText class="label_cadastro" value="Cidade" />
+			<h:inputText styleClass="input_cadastro" required="true"
+				requiredMessage="Informe sua Cidade" />
+			<h:outputText class="label_cadastro" value="Estado" />
+			<h:inputText styleClass="input_cadastro" required="true"
+				requiredMessage="Informe seu Estado" />
+ 
+			<p:selectManyCheckbox styleClass="input_cadastro" id="check-box" style="margin-top: 10px;">
+				<f:selectItem itemLabel="É um funcionário?" itemValue="Funcionario" />
+			</p:selectManyCheckbox>
+
+		</div>
+	</h:form>
+	<div class="submit_cadastro">
+		<p:commandButton id="button_submit" type="submit" value="Cadastrar" />
+
+	</div>
+</h:body>
+</html>

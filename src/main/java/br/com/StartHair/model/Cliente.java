@@ -2,8 +2,18 @@ package br.com.StartHair.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="cliente")
 public class Cliente {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String nome;
 	private String cpf;
@@ -15,6 +25,12 @@ public class Cliente {
 	private String endereco;
 	private String cidade;
 	private String estado;
+	
+	
+
+	public Cliente() {
+		super();
+	}
 
 	public Cliente(int id, String nome, String cpf, String sexo, Date data_nascimento, String email, String senha,
 			String telefone, String endereco, String cidade, String estado) {
