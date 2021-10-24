@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Start Hair</title>
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+		integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<h:outputStylesheet library="css" name="carrinho.css" />
+	<h:outputStylesheet library="css" name="lightslider.css" />
+
+	<h:outputScript library="js" name="index.js" />
+
+	<!--Jquery-->
+	<script type="text/javascript" src="resources/js/Jquery.js"></script>
+	<script type="text/javascript" src="resources/js/lightslider.js"></script>
+</h:head>
+<h:body>
+	<!-- HEADER -->
+	<div class="header">
+		<!-- MENU -->
+		<h:form id="form">
+			<div class="menu-header">
+				<p:commandButton id="dynaButton" value="Menu" type="button" />
+				<p:tieredMenu overlay="true" trigger="dynaButton" my="left top"
+					at="left bottom"
+					style="width:200px; margin-top: 65px; margin-left: 50px;">
+					<p:submenu label="Produtos">
+						<p:menuitem value="Shampoos e Condicionadores" />
+						<p:menuitem value="Hidratações" />
+						<p:menuitem value="Tintas" />
+					</p:submenu>
+					<p:menuitem value="Agendamentos" />
+					<p:menuitem value="Minhas Compras" />
+				</p:tieredMenu>
+			</div>
+		</h:form>
+		<!-- MENU ACABOU -->
+		<!-- RESTO DO HEADER -->
+		<div class="inner_header">
+			<div class="logo_container">
+				<h:graphicImage id="logo" library="img" name="logo.png" />
+			</div>
+			<div class="ui-input-icon-left p-mr-2">
+				<i class="pi pi-fw pi-search" id="icone_pesquisa" />
+				<p:inputText id="barra_pesquisa" />
+			</div>
+		</div>
+		<p:button value="Logout" icon="pi pi-fw pi-sign-out"
+			styleClass="ui-button-info" id="logout_button" />
+	</div>
+	<!-- HEADER ACABA AQUI -->
+
+	<div class="carossel_shampoo">
+		<h:outputLabel value="Carrinho de compras" styleClass="labels" />
+	</div>
+	
+	<div class="etapas">
+		<div class="etapa">
+			<h:graphicImage class="etapaatual" library="img" name="etapaatual.png" />
+			<h:graphicImage class="etapaImg" library="img" name="etapa1.png" />
+		</div>
+		<h:graphicImage class="line" library="img" name="line.png" />
+		<div class="etapa">
+			<h:graphicImage class="etapaatual" library="img" name="proximasetapas.png" />
+			<h:graphicImage class="etapaImg" library="img" name="etapa2.png" />
+		</div>
+		<h:graphicImage class="line" library="img" name="line.png" />
+		<div class="etapa">
+			<h:graphicImage class="etapaatual" library="img" name="proximasetapas.png" />
+			<h:graphicImage class="etapaImg" library="img" name="etapa3.png" />
+		</div>
+		<h:graphicImage class="line" library="img" name="line.png" />
+		<div class="etapa">
+			<h:graphicImage class="etapaatual" library="img" name="proximasetapas.png" />
+			<h:graphicImage class="etapaImg" library="img" name="etapa4.png" />
+		</div>
+	</div>
+	
+	<div class="produtos">
+		<ul>
+		  	<li>
+			  	<div class="produto">
+			  		<h:graphicImage class="imgProduto" library="img" name="shampoo1.png" />
+			  		<span>Shampoo Salon Line</span>
+			  		<div class="quantidade">
+			  			<h:graphicImage class="mais" library="img" name="mais.png" />
+			  			<div class="numero"> 1 </div>
+			  			<h:graphicImage class="menos" library="img" name="menos.png" />
+			  		</div>
+			  		<span>R$ 10,00</span>
+			  	</div>
+			</li>
+			<li>
+			  	<div class="produto">
+			  		<h:graphicImage class="imgProduto" library="img" name="shampoo3.png" />
+			  		<span>Shampoo Salon Line</span>
+			  		<div class="quantidade">
+			  			<h:graphicImage class="mais" library="img" name="mais.png" />
+			  			<div class="numero"> 1 </div>
+			  			<h:graphicImage class="menos" library="img" name="menos.png" />
+			  		</div>
+			  		<span>R$ 10,00</span>
+			  	</div>
+			</li>
+			<li>
+			  	<div class="produto">
+			  		<h:graphicImage class="imgProduto" library="img" name="shampoo4.png" />
+			  		<span>Shampoo Seda</span>
+			  		<div class="quantidade">
+			  			<h:graphicImage class="mais" library="img" name="mais.png" />
+			  			<div class="numero"> 1 </div>
+			  			<h:graphicImage class="menos" library="img" name="menos.png" />
+			  		</div>
+			  		<span>R$ 10,00</span>
+			  	</div>
+			</li>
+		</ul>
+	</div>
+	<div class="calculaFrete">
+		<div class="informaCep">
+			<h3>Calcular frete: </h3>
+			<input type="text" class="cep" id="fname" name="fname"></input>
+			<button class="calcular"> Calcular </button>
+		</div>
+		<div class="resultadoFrete">
+			<h4>Transportadora:</h4>
+			<span>SEDEX: <strong>R$20,00</strong></span>
+			<span>Prazo de entrega: <strong>2 a 7 dias</strong></span>
+		</div>
+	</div>	
+	<div class="next">
+		<h3>Subtotal: R$30,00</h3>
+		<h3>Frete: R$20,00</h3>
+		<h3>Total: R$50,00</h3>
+		<button class="prosseguir"> Prosseguir </button>
+	</div>
+</h:body>
+</html>
