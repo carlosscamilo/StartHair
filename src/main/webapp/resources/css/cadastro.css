@@ -75,6 +75,7 @@ background: none;
 border: 2px solid #593199;
 color: #593199;
 height: 50%;
+width: 85%;
 }
 
 #button_submit :hover {

@@ -17,14 +17,24 @@
 	<h:outputScript library="js" name="index.js" />
 
 	<!--Jquery-->
-	<script type="text/javascript" src="resources/js/Jquery.js"></script>
+
 	<script type="text/javascript" src="resources/js/lightslider.js"></script>
 </h:head>
 <h:body>
 
 	<!-- HEADER -->
 
-	<div class="header">
+	<style type="text/css">
+		.ui-g div {
+			
+			text-align: center;
+			
+				}
+	</style>
+
+	<div class="ui-g">
+
+		<div class="header">
 
 		<!-- MENU -->
 
@@ -34,27 +44,39 @@
 
 			<div class="menu-header">
 
-				<p:commandButton id="dynaButton" value="Menu" type="button" />
-
-
-
+				<p:commandButton id="dynaButton" value="Menu" type="button"
+					icon="pi pi-external-link" />
+					
 				<p:tieredMenu overlay="true" trigger="dynaButton" my="left top"
-					at="left bottom"
-					style="width:200px; margin-top: 65px; margin-left: 50px;">
-
-					<p:submenu label="Produtos">
-						<p:menuitem value="Shampoos e Condicionadores" />
-
-						<p:menuitem value="Hidratações" />
-
-						<p:menuitem value="Tintas" />
+					at="left bottom" style="width:200px">
+					
+					<p:menuitem value="Página Inicial" url="http://localhost:8080/StartHair/index.xhtml" />
+					
+					<p:submenu label="Produtos" icon="pi pi-fw pi-shopping-cart">
+					
+							<p:menuitem value="Shampoos e Condicionadores" url="http://localhost:8080/StartHair/catalogoShampoo.xhtml"/>
+							<p:menuitem value="Hidratações" url="http://localhost:8080/StartHair/catalogoHidratacoes.xhtml" />
+							<p:menuitem value="Tintas" url="http://localhost:8080/StartHair/catalogoTintas.xhtml" />
+						
 					</p:submenu>
 
-					<p:menuitem value="Agendamentos" />
+					<p:menuitem value="Agendamento" icon="pi pi-fw pi-clock"/>
 
-					<p:menuitem value="Minhas Compras" />
+					<p:menuitem value="Minhas Compras" icon="pi pi-fw pi-shopping-cart"/>
 
+					<p:submenu label="Listas" icon="pi pi-fw pi-list" >
+						
+						<p:menuitem value ="Lista de agendamentos" icon="pi pi-fw pi-clock" />
+						<p:menuitem value ="Lista de vendas" icon="pi pi-fw pi-shopping-cart" />
+						
+					
+					</p:submenu>
+					
+				
 				</p:tieredMenu>
+
+
+
 
 
 
@@ -80,13 +102,14 @@
 		</div>
 
 
-		<p:button value="Logout" icon="pi pi-fw pi-sign-out"
-			styleClass="ui-button-info" id="logout_button" />
+		<p:linkButton value="Logout" icon="pi pi-fw pi-sign-out"
+			styleClass="ui-button-info" id="logout_button" href="http://localhost:8080/StartHair/login.xhtml"  />
 
 
 	</div>
 
 	<!-- HEADER ACABA AQUI -->
+	</div>
 
 	<div class="carossel_shampoo">
 
@@ -296,7 +319,7 @@
 
 	<!-- CARROSEL DE TINTAS -->
 
-	
+
 	<div class="carossel_shampoo">
 
 		<h:outputLabel value="Tintas" styleClass="labels" />
