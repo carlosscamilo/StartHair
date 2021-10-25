@@ -258,6 +258,15 @@ body {
 	margin-top: 50px;
 }
 
+.endereco {
+	width: 60%;
+	height: 480px;
+	display: flex;
+	align-self: center;
+	justify-content: center;
+	margin-top: 50px;
+}
+
 ul,li {
 	width: 100%;
 	height: 150px;
@@ -324,6 +333,10 @@ ul,li {
 	width: 150px;
 	height: 30px;
 }
+.inputEndereco{
+	width: 150px;
+	height: 30px;
+}
 .calcular{
 	width: 70px;
 	height: 30px;
@@ -343,6 +356,62 @@ ul,li {
 	flex-direction: column;	
 	margin-bottom: 30px;
 }
+
+.formapagamento{
+	width: 60%;
+	height: 70px;
+	background-color: #d5d5d5;
+	display: flex;
+	align-self: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;	
+	margin-bottom: 10px;
+}
+
+.pagamento{
+	width: 40%;
+	height: 70px;
+	display: flex;
+	align-self: center;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;	
+	margin-bottom: 30px;
+}
+
+.cartao{
+	width:170px;
+	height: 100px;
+	align-self: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
+.tipopagamento{
+	width: 100px;
+	height: 50px;
+	background-color: #d5d5d5;
+	margin: 50px;
+	align-self: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
+.tipopagamentoatual{
+	width: 100px;
+	height: 50px;
+	background-color: #f98ce7;
+	margin: 50px;
+	align-self: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
 
 .prosseguir{
 	width: 500px;
