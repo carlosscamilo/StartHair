@@ -12,10 +12,19 @@
 
 </h:head>
 <h:body>
-
 	<!-- HEADER -->
 
-	<div class="header">
+	<style type="text/css">
+		.ui-g div {
+			
+			text-align: center;
+			
+				}
+	</style>
+
+	<div class="ui-g">
+
+		<div class="header">
 
 		<!-- MENU -->
 
@@ -41,13 +50,16 @@
 						
 					</p:submenu>
 
-					<p:menuitem value="Agendamento" icon="pi pi-fw pi-clock"/>
+					<p:menuitem value="Carrinho" icon="pi pi-fw pi-shopping-cart" url="http://localhost:8080/StartHair/carrinho.xhtml"/>
 
-					<p:menuitem value="Minhas Compras" icon="pi pi-fw pi-shopping-cart"/>
+					<p:menuitem value="Agendamento" url="http://localhost:8080/StartHair/servicos.xhtml" icon="pi pi-fw pi-clock"/>
+
+
+					<p:menuitem value="Minhas Compras" icon="pi pi-fw pi-list"/>
 
 					<p:submenu label="Listas" icon="pi pi-fw pi-list" >
 						
-						<p:menuitem value ="Lista de agendamentos" icon="pi pi-fw pi-clock" />
+						<p:menuitem value ="Lista de agendamentos" url="http://localhost:8080/StartHair/servicos.xhtml" icon="pi pi-fw pi-clock" />
 						<p:menuitem value ="Lista de vendas" icon="pi pi-fw pi-shopping-cart" />
 						
 					
@@ -90,7 +102,7 @@
 	</div>
 
 	<!-- HEADER ACABA AQUI -->
-
+	</div>
 
 	<div class="sessao">
 		<h1>Hidratações</h1>

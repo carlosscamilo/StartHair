@@ -12,10 +12,16 @@
 		integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<h:outputStylesheet library="css" name="carrinho.css" />
+	<h:outputStylesheet library="css" name="lightslider.css" />
 
+	<h:outputScript library="js" name="index.js" />
+
+	<!--Jquery-->
+	<script type="text/javascript" src="resources/js/Jquery.js"></script>
+	<script type="text/javascript" src="resources/js/lightslider.js"></script>
 </h:head>
 <h:body>
-		<!-- HEADER -->
+	<!-- HEADER -->
 
 	<style type="text/css">
 		.ui-g div {
@@ -108,17 +114,17 @@
 	</div>
 
 	<div class="carossel_shampoo">
-		<h:outputLabel value="Carrinho de compras" styleClass="labels" />
+		<h:outputLabel value="Endereço de entrega" styleClass="labels" />
 	</div>
 	
 	<div class="etapas">
 		<div class="etapa">
-			<h:graphicImage class="etapaatual" library="img" name="etapaatual.png" />
+			<h:graphicImage class="etapaatual" library="img" name="proximasetapas.png" />
 			<h:graphicImage class="etapaImg" library="img" name="etapa1.png" />
 		</div>
 		<h:graphicImage class="line" library="img" name="line.png" />
 		<div class="etapa">
-			<h:graphicImage class="etapaatual" library="img" name="proximasetapas.png" />
+			<h:graphicImage class="etapaatual" library="img" name="etapaatual.png" />
 			<h:graphicImage class="etapaImg" library="img" name="etapa2.png" />
 		</div>
 		<h:graphicImage class="line" library="img" name="line.png" />
@@ -133,64 +139,55 @@
 		</div>
 	</div>
 	
-	<div class="produtos">
-		<ul class="lista_produtos">
-		  	<li class="item_lista">
-			  	<div class="produto">
-			  		<h:graphicImage class="imgProduto" library="img" name="shampoo1.png" />
-			  		<span>Shampoo Salon Line</span>
-			  		<div class="quantidade">
-			  			<h:graphicImage class="mais" library="img" name="mais.png" />
-			  			<div class="numero"> 1 </div>
-			  			<h:graphicImage class="menos" library="img" name="menos.png" />
-			  		</div>
-			  		<span>R$ 10,00</span>
-			  	</div>
-			</li>
-			<li class="item_lista">
-			  	<div class="produto">
-			  		<h:graphicImage class="imgProduto" library="img" name="shampoo3.png" />
-			  		<span>Shampoo Salon Line</span>
-			  		<div class="quantidade">
-			  			<h:graphicImage class="mais" library="img" name="mais.png" />
-			  			<div class="numero"> 1 </div>
-			  			<h:graphicImage class="menos" library="img" name="menos.png" />
-			  		</div>
-			  		<span>R$ 10,00</span>
-			  	</div>
-			</li>
-			<li class="item_lista">
-			  	<div class="produto">
-			  		<h:graphicImage class="imgProduto" library="img" name="shampoo4.png" />
-			  		<span>Shampoo Seda</span>
-			  		<div class="quantidade">
-			  			<h:graphicImage class="mais" library="img" name="mais.png" />
-			  			<div class="numero"> 1 </div>
-			  			<h:graphicImage class="menos" library="img" name="menos.png" />
-			  		</div>
-			  		<span>R$ 10,00</span>
-			  	</div>
-			</li>
-		</ul>
-	</div>
-	<div class="calculaFrete">
-		<div class="informaCep">
-			<h3>Calcular frete: </h3>
-			<input type="text" class="cep" id="fname" name="fname"></input>
-			<button class="calcular"> Calcular </button>
-		</div>
-		<div class="resultadoFrete">
-			<h4>Transportadora:</h4>
-			<span>SEDEX: <strong>R$20,00</strong></span>
-			<span>Prazo de entrega: <strong>2 a 7 dias</strong></span>
-		</div>
-	</div>	
-	<div class="next">
-		<h3>Subtotal: R$30,00</h3>
-		<h3>Frete: R$20,00</h3>
-		<h3>Total: R$50,00</h3>
-		<form action="carrinho2.xhtml">
-			<button class="prosseguir"> Continuar </button>
+	<div class="produtos">	
+		<form method="post" action="carrinho3.xhtml">
+			Logradouro: <input class="inputEndereco" type="text" name="logradouro" size="30" placeholder="Ex: Rua das Flores"/>
+			Número: <input class="inputEndereco" type="text" name="numero" size="30" placeholder="Ex: 0000"/>
+			<br />
+			<br />
+			CEP: <input class="inputEndereco" type="text" name="cep" size="15" placeholder="Informe o CEP"/>
+			Complemento: <input class="inputEndereco" type="text" name="complemento" size="15" placeholder="Ex: Casa"/>
+			<br />
+			<br />
+			Bairro: <input class="inputEndereco" type="text" name="bairro" size="15" placeholder="Informe o bairro"/>
+			Cidade: <input class="inputEndereco" type="text" name="cidade" size="15" placeholder="Informe o cidade"/>
+			<br />
+			<br />
+			Estado:
+			<select class="inputEndereco" id="estado" name="estado">
+				<option value="">Selecione um estado</option>
+			    <option value="AC">Acre</option>
+			    <option value="AL">Alagoas</option>
+			    <option value="AP">Amapá</option>
+			    <option value="AM">Amazonas</option>
+			    <option value="BA">Bahia</option>
+			    <option value="CE">Ceará</option>
+			    <option value="DF">Distrito Federal</option>
+			    <option value="ES">Espírito Santo</option>
+			    <option value="GO">Goiás</option>
+			    <option value="MA">Maranhão</option>
+			    <option value="MT">Mato Grosso</option>
+			    <option value="MS">Mato Grosso do Sul</option>
+			    <option value="MG">Minas Gerais</option>
+			    <option value="PA">Pará</option>
+			    <option value="PB">Paraíba</option>
+			    <option value="PR">Paraná</option>
+			    <option value="PE">Pernambuco</option>
+			    <option value="PI">Piauí</option>
+			    <option value="RJ">Rio de Janeiro</option>
+			    <option value="RN">Rio Grande do Norte</option>
+			    <option value="RS">Rio Grande do Sul</option>
+			    <option value="RO">Rondônia</option>
+			    <option value="RR">Roraima</option>
+			    <option value="SC">Santa Catarina</option>
+			    <option value="SP">São Paulo</option>
+			    <option value="SE">Sergipe</option>
+			    <option value="TO">Tocantins</option>
+			    <option value="EX">Estrangeiro</option>
+			</select>
+			<br />
+			<br />
+			<input class="prosseguir" type="submit" name="submitbtn" value="Continuar" />
 		</form>
 	</div>
 </h:body>

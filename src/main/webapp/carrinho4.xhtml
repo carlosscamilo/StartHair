@@ -12,10 +12,16 @@
 		integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<h:outputStylesheet library="css" name="carrinho.css" />
+	<h:outputStylesheet library="css" name="lightslider.css" />
 
+	<h:outputScript library="js" name="index.js" />
+
+	<!--Jquery-->
+
+	<script type="text/javascript" src="resources/js/lightslider.js"></script>
 </h:head>
 <h:body>
-		<!-- HEADER -->
+	<!-- HEADER -->
 
 	<style type="text/css">
 		.ui-g div {
@@ -106,14 +112,13 @@
 
 	<!-- HEADER ACABA AQUI -->
 	</div>
-
-	<div class="carossel_shampoo">
-		<h:outputLabel value="Carrinho de compras" styleClass="labels" />
+		<div class="carossel_shampoo">
+		<h:outputLabel value="Confirmação" styleClass="labels" />
 	</div>
 	
 	<div class="etapas">
 		<div class="etapa">
-			<h:graphicImage class="etapaatual" library="img" name="etapaatual.png" />
+			<h:graphicImage class="etapaatual" library="img" name="proximasetapas.png" />
 			<h:graphicImage class="etapaImg" library="img" name="etapa1.png" />
 		</div>
 		<h:graphicImage class="line" library="img" name="line.png" />
@@ -128,70 +133,14 @@
 		</div>
 		<h:graphicImage class="line" library="img" name="line.png" />
 		<div class="etapa">
-			<h:graphicImage class="etapaatual" library="img" name="proximasetapas.png" />
+			<h:graphicImage class="etapaatual" library="img" name="etapaatual.png" />
 			<h:graphicImage class="etapaImg" library="img" name="etapa4.png" />
 		</div>
 	</div>
 	
-	<div class="produtos">
-		<ul class="lista_produtos">
-		  	<li class="item_lista">
-			  	<div class="produto">
-			  		<h:graphicImage class="imgProduto" library="img" name="shampoo1.png" />
-			  		<span>Shampoo Salon Line</span>
-			  		<div class="quantidade">
-			  			<h:graphicImage class="mais" library="img" name="mais.png" />
-			  			<div class="numero"> 1 </div>
-			  			<h:graphicImage class="menos" library="img" name="menos.png" />
-			  		</div>
-			  		<span>R$ 10,00</span>
-			  	</div>
-			</li>
-			<li class="item_lista">
-			  	<div class="produto">
-			  		<h:graphicImage class="imgProduto" library="img" name="shampoo3.png" />
-			  		<span>Shampoo Salon Line</span>
-			  		<div class="quantidade">
-			  			<h:graphicImage class="mais" library="img" name="mais.png" />
-			  			<div class="numero"> 1 </div>
-			  			<h:graphicImage class="menos" library="img" name="menos.png" />
-			  		</div>
-			  		<span>R$ 10,00</span>
-			  	</div>
-			</li>
-			<li class="item_lista">
-			  	<div class="produto">
-			  		<h:graphicImage class="imgProduto" library="img" name="shampoo4.png" />
-			  		<span>Shampoo Seda</span>
-			  		<div class="quantidade">
-			  			<h:graphicImage class="mais" library="img" name="mais.png" />
-			  			<div class="numero"> 1 </div>
-			  			<h:graphicImage class="menos" library="img" name="menos.png" />
-			  		</div>
-			  		<span>R$ 10,00</span>
-			  	</div>
-			</li>
-		</ul>
-	</div>
-	<div class="calculaFrete">
-		<div class="informaCep">
-			<h3>Calcular frete: </h3>
-			<input type="text" class="cep" id="fname" name="fname"></input>
-			<button class="calcular"> Calcular </button>
-		</div>
-		<div class="resultadoFrete">
-			<h4>Transportadora:</h4>
-			<span>SEDEX: <strong>R$20,00</strong></span>
-			<span>Prazo de entrega: <strong>2 a 7 dias</strong></span>
-		</div>
-	</div>	
 	<div class="next">
-		<h3>Subtotal: R$30,00</h3>
-		<h3>Frete: R$20,00</h3>
-		<h3>Total: R$50,00</h3>
-		<form action="carrinho2.xhtml">
-			<button class="prosseguir"> Continuar </button>
-		</form>
+		<h2><strong>Pedido realizado com sucesso!</strong></h2>
+		<h4>Em breve você receberá seus produtos!</h4>
 	</div>
 </h:body>
 </html>
