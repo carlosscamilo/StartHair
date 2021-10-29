@@ -11,56 +11,126 @@
 </h:head>
 <h:body>
 	<h1 id="h1_cadastro">Cadastro</h1>
-	<h:form>
+	<h:form id="form">
 		<div class="container">
 			<h:outputText class="label_cadastro" value="Nome" />
-			<h:inputText styleClass="input_cadastro" required="true"
-				requiredMessage="Informe seu Nome" />
+			<p:inputText styleClass="input_cadastro" required="true"
+				requiredMessage="Informe seu Nome"
+				value="#{clienteBean.cliente.nome}" placeholder="Nome" />
+
 			<h:outputText class="label_cadastro" value="CPF" />
-			<h:inputText styleClass="input_cadastro" required="true"
-				requiredMessage="Informe seu CPF" />
+
+
+			<p:inputMask id="CpfWithExt" styleClass="input_cadastro"
+				value="#{clienteBean.cliente.cpf}" mask="999.999.999-99"
+				required="true" requiredMessage="Informe seu CPF" />
+
 			<h:outputText class="label_cadastro" value="Sexo" />
 
-			<h:selectOneMenu styleClass="input_cadastro">
+			<p:selectOneMenu id="sexo" styleClass="input_cadastro"
+				value="#{clienteBean.cliente.sexo}"
+				style="width: 278.988636px;margin-top: 0px;margin-right: 8px;">
 
-				<f:selectItem itemValue="Masculino" />
-				<f:selectItem itemValue="Feminino" />
-				<f:selectItem itemValue="Outros" />
-			</h:selectOneMenu>
-			<h:outputText class="label_cadastro" value="Data" />
-			<input class="input_cadastro" type="date"></input>
+				<f:selectItem itemLabel="Selecione uma opção" itemValue="" />
+				<f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+				<f:selectItem itemLabel="Feminino" itemValue="Feminino" />
+				<f:selectItem itemLabel="Outros" itemValue="Outros" />
+
+			</p:selectOneMenu>
+
+
+			<h:outputText class="label_cadastro" value="Data de nascimento" />
+
+			<p:datePicker id="basic" style="width: 280px;"
+				styleClass="input_cadastro"
+				value="#{clienteBean.cliente.data_nascimento}" pattern="yyyy-MM-dd" />
 
 			<h:outputText class="label_cadastro" value="Email" />
-			<h:inputText type="email" styleClass="input_cadastro" required="true"
-				requiredMessage="Informe seu Email" />
+			<p:inputText type="email" styleClass="input_cadastro" required="true"
+				requiredMessage="Informe seu Email"
+				value="#{clienteBean.cliente.email}"
+				placeholder="exemplo@hotmail.com" />
 
 
 			<h:outputText class="label_cadastro" value="Senha" />
-			<h:inputSecret styleClass="input_cadastro" required="true"
-				requiredMessage="Senha" />
+			<p:password styleClass="input_cadastro" required="true"
+				requiredMessage="Senha" value="#{clienteBean.cliente.senha}"
+				toggleMask="true" redisplay="true" />
+
+
+
 			<h:outputText class="label_cadastro" value="Telefone" />
-			<h:inputText styleClass="input_cadastro" required="true"
-				requiredMessage="Informe seu Telefone" />
+
+			<p:inputMask id="phoneWithExt" styleClass="input_cadastro"
+				value="#{clienteBean.cliente.telefone}" mask="(99) 99999-9999"
+				required="true" requiredMessage="Informe seu Telefone" />
+
+
 			<h:outputText class="label_cadastro" value="Endereço" />
-			<h:inputText styleClass="input_cadastro" required="true"
-				requiredMessage="Informe seu Endereço" />
+			<p:inputText styleClass="input_cadastro" required="true"
+				requiredMessage="Informe seu Endereço"
+				value="#{clienteBean.cliente.endereco}"
+				placeholder="Rua, N° da residência" />
 
 			<h:outputText class="label_cadastro" value="Cidade" />
-			<h:inputText styleClass="input_cadastro" required="true"
-				requiredMessage="Informe sua Cidade" />
+			<p:inputText styleClass="input_cadastro" required="true"
+				requiredMessage="Informe sua Cidade"
+				value="#{clienteBean.cliente.cidade}" />
+
 			<h:outputText class="label_cadastro" value="Estado" />
-			<h:inputText styleClass="input_cadastro" required="true"
-				requiredMessage="Informe seu Estado" />
- 
-			<p:selectManyCheckbox styleClass="input_cadastro" id="check-box" style="margin-top: 10px;">
-				<f:selectItem itemLabel="É um funcionário?" itemValue="Funcionario" />
-			</p:selectManyCheckbox>
+			<p:selectOneMenu styleClass="input_cadastro" required="true"
+				requiredMessage="Informe seu Estado"
+				value="#{clienteBean.cliente.estado}"
+				style="width: 278.988636px;margin-top: 0px;margin-right: 12px;">
+
+
+				<f:selectItem itemLabel="Selecione uma opção" itemValue="" />
+				<f:selectItem itemLabel="AC" itemValue="AC" />
+				<f:selectItem itemLabel="AL" itemValue="AL" />
+				<f:selectItem itemLabel="AP" itemValue="AP" />
+				<f:selectItem itemLabel="AM" itemValue="AM" />
+				<f:selectItem itemLabel="BA" itemValue="BA" />
+				<f:selectItem itemLabel="CE" itemValue="CE" />
+				<f:selectItem itemLabel="ES" itemValue="ES" />
+				<f:selectItem itemLabel="GO" itemValue="GO" />
+				<f:selectItem itemLabel="MA" itemValue="MA" />
+				<f:selectItem itemLabel="MT" itemValue="MT" />
+				<f:selectItem itemLabel="MS" itemValue="MS" />
+				<f:selectItem itemLabel="MG" itemValue="MG" />
+				<f:selectItem itemLabel="PA" itemValue="PA" />
+				<f:selectItem itemLabel="PB" itemValue="PB" />
+				<f:selectItem itemLabel="PR" itemValue="PR" />
+				<f:selectItem itemLabel="PE" itemValue="PE" />
+				<f:selectItem itemLabel="PI" itemValue="PI" />
+				<f:selectItem itemLabel="RJ" itemValue="RJ" />
+				<f:selectItem itemLabel="RN" itemValue="RN" />
+				<f:selectItem itemLabel="RO" itemValue="RO" />
+				<f:selectItem itemLabel="RR" itemValue="RR" />
+				<f:selectItem itemLabel="SC" itemValue="SC" />
+				<f:selectItem itemLabel="SP" itemValue="SP" />
+				<f:selectItem itemLabel="SE" itemValue="SE" />
+				<f:selectItem itemLabel="TO" itemValue="TO" />
+				<f:selectItem itemLabel="DF" itemValue="DF" />
+
+
+			</p:selectOneMenu>
+
+			<!-- 			<p:selectManyCheckbox styleClass="input_cadastro" id="check-box" style="margin-top: 10px;"> -->
+			<!-- 				<f:selectItem itemLabel="É um funcionário?" itemValue="Funcionario" /> -->
+			<!-- 			</p:selectManyCheckbox> -->
 
 		</div>
-	</h:form>
-	<div class="submit_cadastro">
-		<p:linkButton id="button_submit" type="submit" value=" Cadastrar" href="http://localhost:8080/StartHair/login.xhtml" />
 
-	</div>
+		<div class="submit_cadastro">
+			<p:commandButton id="button_submit" value=" Cadastrar"
+				action="#{clienteBean.adicionarEvento}"  />
+		</div>
+
+	</h:form>
+
+
+
+	
+
 </h:body>
 </html>

@@ -1,5 +1,6 @@
 package br.com.StartHair.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -10,8 +11,11 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="cliente")
-public class Cliente {
+public class Cliente implements Serializable {
 
+
+
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
