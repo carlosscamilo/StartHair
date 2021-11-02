@@ -128,6 +128,19 @@
 
 	</h:form>
 
+		<h:panelGroup>
+		<p:dataTable value="#{clienteBean.listaCliente}" var="e" border="1"
+			id="table">
+			<p:column headerText="ID">#{e.id}</p:column>
+			<p:column headerText="Nome">#{e.nome}</p:column>
+			<p:column headerText="cpf">#{e.cpf}</p:column>
+			<p:column headerText="Sexo">#{e.sexo}</p:column>
+			<p:column headerText="Data Nascimento">#{e.data_nascimento}</p:column>
+			
+
+		</p:dataTable>
+	</h:panelGroup>
+
 
 
 	
