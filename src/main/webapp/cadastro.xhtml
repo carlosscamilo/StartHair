@@ -16,19 +16,19 @@
 			<h:outputText class="label_cadastro" value="Nome" />
 			<p:inputText styleClass="input_cadastro" required="true"
 				requiredMessage="Informe seu Nome"
-				value="#{clienteBean.cliente.nome}" placeholder="Nome" />
+				value="#{cadastroBean.cliente.nome}" placeholder="Nome" />
 
 			<h:outputText class="label_cadastro" value="CPF" />
 
 
 			<p:inputMask id="CpfWithExt" styleClass="input_cadastro"
-				value="#{clienteBean.cliente.cpf}" mask="999.999.999-99"
+				value="#{cadastroBean.cliente.cpf}" mask="999.999.999-99"
 				required="true" requiredMessage="Informe seu CPF" />
 
 			<h:outputText class="label_cadastro" value="Sexo" />
 
 			<p:selectOneMenu id="sexo" styleClass="input_cadastro"
-				value="#{clienteBean.cliente.sexo}"
+				value="#{cadastroBean.cliente.sexo}"
 				style="width: 278.988636px;margin-top: 0px;margin-right: 8px;">
 
 				<f:selectItem itemLabel="Selecione uma opção" itemValue="" />
@@ -43,18 +43,18 @@
 
 			<p:datePicker id="basic" style="width: 280px;"
 				styleClass="input_cadastro"
-				value="#{clienteBean.cliente.data_nascimento}" pattern="yyyy-MM-dd" />
+				value="#{cadastroBean.cliente.data_nascimento}" pattern="yyyy-MM-dd" />
 
 			<h:outputText class="label_cadastro" value="Email" />
 			<p:inputText type="email" styleClass="input_cadastro" required="true"
 				requiredMessage="Informe seu Email"
-				value="#{clienteBean.cliente.email}"
+				value="#{cadastroBean.cliente.email}"
 				placeholder="exemplo@hotmail.com" />
 
 
 			<h:outputText class="label_cadastro" value="Senha" />
 			<p:password styleClass="input_cadastro" required="true"
-				requiredMessage="Senha" value="#{clienteBean.cliente.senha}"
+				requiredMessage="Senha" value="#{cadastroBean.cliente.senha}"
 				toggleMask="true" redisplay="true" />
 
 
@@ -62,25 +62,25 @@
 			<h:outputText class="label_cadastro" value="Telefone" />
 
 			<p:inputMask id="phoneWithExt" styleClass="input_cadastro"
-				value="#{clienteBean.cliente.telefone}" mask="(99) 99999-9999"
+				value="#{cadastroBean.cliente.telefone}" mask="(99) 99999-9999"
 				required="true" requiredMessage="Informe seu Telefone" />
 
 
 			<h:outputText class="label_cadastro" value="Endereço" />
 			<p:inputText styleClass="input_cadastro" required="true"
 				requiredMessage="Informe seu Endereço"
-				value="#{clienteBean.cliente.endereco}"
+				value="#{cadastroBean.cliente.endereco}"
 				placeholder="Rua, N° da residência" />
 
 			<h:outputText class="label_cadastro" value="Cidade" />
 			<p:inputText styleClass="input_cadastro" required="true"
 				requiredMessage="Informe sua Cidade"
-				value="#{clienteBean.cliente.cidade}" />
+				value="#{cadastroBean.cliente.cidade}" />
 
 			<h:outputText class="label_cadastro" value="Estado" />
 			<p:selectOneMenu styleClass="input_cadastro" required="true"
 				requiredMessage="Informe seu Estado"
-				value="#{clienteBean.cliente.estado}"
+				value="#{cadastroBean.cliente.estado}"
 				style="width: 278.988636px;margin-top: 0px;margin-right: 12px;">
 
 
@@ -123,23 +123,10 @@
 
 		<div class="submit_cadastro">
 			<p:commandButton id="button_submit" value=" Cadastrar"
-				action="#{clienteBean.adicionarEvento}"  />
+				action="#{cadastroBean.cadastrarCliente}"  />
 		</div>
 
 	</h:form>
-
-		<h:panelGroup>
-		<p:dataTable value="#{clienteBean.listaCliente}" var="e" border="1"
-			id="table">
-			<p:column headerText="ID">#{e.id}</p:column>
-			<p:column headerText="Nome">#{e.nome}</p:column>
-			<p:column headerText="cpf">#{e.cpf}</p:column>
-			<p:column headerText="Sexo">#{e.sexo}</p:column>
-			<p:column headerText="Data Nascimento">#{e.data_nascimento}</p:column>
-			
-
-		</p:dataTable>
-	</h:panelGroup>
 
 
 

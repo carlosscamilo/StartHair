@@ -29,4 +29,12 @@ public class ClienteDAO {
 		return em.find(Cliente.class, id);
 	}
 
+	public Cliente buscarPorNome(String nome) {
+		return em.find(Cliente.class, nome);
+	}
+	
+	public Cliente buscarPorEmail(String email) {
+		return em.find(Cliente.class, email);
+	}
+	
 }

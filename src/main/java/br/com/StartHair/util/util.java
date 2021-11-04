@@ -31,4 +31,6 @@ public class util {
 		FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, mensagem, "");
 		contexto.addMessage(null, msg);
 	}
+	
+
 }

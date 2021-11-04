@@ -10,33 +10,30 @@ import javax.inject.Named;
 import br.com.StartHair.dao.ClienteDAO;
 import br.com.StartHair.model.Cliente;
 
-@Named(value = "clienteBean")
+@Named(value = "cadastroBean")
 @SessionScoped
 public class CadastroBean implements Serializable {
-	
+
 	private ClienteDAO clienteDAO;
-	
+
 	private Cliente cliente = new Cliente();
 
-	private List<Cliente> listaCliente = new ArrayList<Cliente>();
-	
-	public String adicionarEvento() throws Exception {
-		
+	public String cadastrarCliente() throws Exception {
+
 		clienteDAO = new ClienteDAO();
-	
+
 		clienteDAO.cadastrar(cliente);
-		
-		listaCliente.add(cliente);
-		System.out.println("Evento " + cliente.getNome() + " cadastrado com sucesso!");
+
+		System.out.println("Cliente " + cliente.getNome() + " cadastrado com sucesso!");
 		clear();
-		
-		return "";
+
+		return "GO_LOGIN";
 	}
-	
+
 	public void clear() {
 		this.cliente = new Cliente();
 	}
-	
+
 	public Cliente getCliente() {
 		return cliente;
 	}
@@ -45,11 +42,4 @@ public class CadastroBean implements Serializable {
 		this.cliente = cliente;
 	}
 
-	public List<Cliente> getlistaCliente() {
-		return listaCliente;
-	}
-
-	public void setlistaCliente(List<Cliente> listaCliente) {
-		this.listaCliente = listaCliente;
-	}
 }

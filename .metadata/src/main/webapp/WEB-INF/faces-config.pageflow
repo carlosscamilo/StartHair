@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf16359831936000" configfile="/StartHair/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="cadastro.xhtml" id="pf16359832759947" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf16359832759948" path="cadastro.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" id="pf16359832759949" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf16359932898581" inlinks="pf16359832759948" path="login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf16359932898582" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf16359932898581" path="index.xhtml"/>
+  <links id="pf16359832759948" target="pf16359832759949" source="pf16359832759947" outcome="GO_LOGIN" redirect="true"/>
+  <links id="pf16359932898581" target="pf16359932898582" source="pf16359832759949" outcome="GO_INDEX" redirect="true"/>
+</pageflow:Pageflow>
