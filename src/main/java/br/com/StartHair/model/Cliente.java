@@ -1,23 +1,21 @@
 package br.com.StartHair.model;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="cliente")
-public class Cliente implements Serializable {
+@Table(name = "cliente")
+public class Cliente {
 
-
-
-	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
 	private String cpf;
@@ -29,15 +27,16 @@ public class Cliente implements Serializable {
 	private String endereco;
 	private String cidade;
 	private String estado;
-	
-	
+	@OneToOne
+	@JoinColumn(name = "id_usuario")
+	private Usuario usuario;
 
 	public Cliente() {
 		super();
 	}
 
 	public Cliente(int id, String nome, String cpf, String sexo, Date data_nascimento, String email, String senha,
-			String telefone, String endereco, String cidade, String estado) {
+			String telefone, String endereco, String cidade, String estado, Usuario usuario) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -50,10 +49,11 @@ public class Cliente implements Serializable {
 		this.endereco = endereco;
 		this.cidade = cidade;
 		this.estado = estado;
+		this.usuario = usuario;
 	}
 
 	public Cliente(int id, String nome, String cpf, Date data_nascimento, String email, String senha, String telefone,
-			String endereco, String cidade, String estado) {
+			String endereco, String cidade, String estado, Usuario usuario) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -65,13 +65,14 @@ public class Cliente implements Serializable {
 		this.endereco = endereco;
 		this.cidade = cidade;
 		this.estado = estado;
+		this.usuario = usuario;
 	}
 
 	public int getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -153,6 +154,14 @@ public class Cliente implements Serializable {
 
 	public void setEstado(String estado) {
 		this.estado = estado;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
 }

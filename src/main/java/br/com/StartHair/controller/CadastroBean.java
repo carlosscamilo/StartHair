@@ -1,30 +1,47 @@
 package br.com.StartHair.controller;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 import br.com.StartHair.dao.ClienteDAO;
+import br.com.StartHair.dao.UsuarioDAO;
 import br.com.StartHair.model.Cliente;
+import br.com.StartHair.model.Usuario;
 
 @Named(value = "cadastroBean")
 @SessionScoped
 public class CadastroBean implements Serializable {
 
 	private ClienteDAO clienteDAO;
+	private UsuarioDAO usuarioDAO;
 
 	private Cliente cliente = new Cliente();
-
+	private Usuario usuario = new Usuario();
+	
 	public String cadastrarCliente() throws Exception {
 
-		clienteDAO = new ClienteDAO();
-
+		this.clienteDAO = new ClienteDAO();
+		this.usuarioDAO = new UsuarioDAO();
+		
+		usuario.setUsername(cliente.getEmail());
+		usuario.setPassword(cliente.getSenha());
+		usuario.setCliente(cliente);
+		
+//		Usuario u = usuarioDAO.buscarPorUsernameAndEmail("Lenore@gmail.com", "123");
+//		System.out.println(u);
+		
 		clienteDAO.cadastrar(cliente);
+		usuarioDAO.cadastrar(usuario);
 
 		System.out.println("Cliente " + cliente.getNome() + " cadastrado com sucesso!");
+		
+		System.out.println("Usuario " + usuario.getUsername() + 
+		" ," + usuario.getPassword() + 
+		", " + usuario.getCliente() +
+		" cadastrado com sucesso!");
+		
 		clear();
 
 		return "GO_LOGIN";

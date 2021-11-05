@@ -2,8 +2,16 @@ package br.com.StartHair.model;
 
 import java.util.Date;
 
-public class Funcionario {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
+@Entity
+public class Funcionario {
+	
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String nome;
 	private String cpf;
@@ -15,9 +23,12 @@ public class Funcionario {
 	private String endereco;
 	private String cidade;
 	private String estado;
+	@OneToOne
+	@JoinColumn(name = "id_usuario")
+	private Usuario usuario;
 
 	public Funcionario(int id, String nome, String cpf, String sexo, Date data_nascimento, String email, String senha,
-			String telefone, String endereco, String cidade, String estado) {
+			String telefone, String endereco, String cidade, String estado, Usuario usuario) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -30,10 +41,11 @@ public class Funcionario {
 		this.endereco = endereco;
 		this.cidade = cidade;
 		this.estado = estado;
+		this.usuario = usuario;
 	}
 
 	public Funcionario(int id, String nome, String cpf, Date data_nascimento, String email, String senha,
-			String telefone, String endereco, String cidade, String estado) {
+			String telefone, String endereco, String cidade, String estado, Usuario usuario) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -45,6 +57,7 @@ public class Funcionario {
 		this.endereco = endereco;
 		this.cidade = cidade;
 		this.estado = estado;
+		this.usuario = usuario;
 	}
 
 	public int getId() {
@@ -135,4 +148,12 @@ public class Funcionario {
 		this.estado = estado;
 	}
 
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
 }

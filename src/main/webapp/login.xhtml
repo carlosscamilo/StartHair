@@ -13,15 +13,17 @@
 	<div class="login">
 		<h1 id="h1_login">Login</h1>
 		<h:outputText value="Email" class="label_login" />
-		<h:inputText styleClass="input_login" placeholder="Email" />
+		<p:inputText styleClass="input_login" placeholder="Email" value="#{loginBean.login}" style="margin-top: 10px; margin-bottom: 10px;"/>
 		<h:outputText value="Senha" class="label_login" />
-		<h:inputSecret styleClass="input_login" placeholder="Senha" />
+		<p:password styleClass="input_login" placeholder="Senha" value="#{loginBean.senha}" style="margin-top: 10px;"/>
+		<h:messages/>
 		<div class="links_login">
 
 			<a class="link_login" id="cadastre_login" href="http://localhost:8080/StartHair/cadastro.xhtml">Cadastre-se</a>
+			<a class="link_login" href="http://localhost:8080/StartHair/loginFuncionario.xhtml">Cadastre um funcionario</a>
 		</div>
-		<p:linkButton class="button_login" id="entrar_button"
-			value="Entrar" type="button" href="http://localhost:8080/StartHair/index.xhtml" />
+		<p:commandButton class="button_login" id="entrar_button"
+			action="#{loginBean.autenticar}" value="Login"  />
 		<div class="label_ou">
 			<h:outputText value="OU" />
 		</div>

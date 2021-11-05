@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>StartHair</title>
+	<h:outputStylesheet library="css" name="telalogin.css" />
+</h:head>
+<h:body>
+ 
+	<div class="login" style="margin-top: 40px;">
+		<h1 id="h1_login">Login Admin</h1>
+		<h:form>
+		<div class="labels">
+			<h:outputText value="Login" class="label_login"
+				style="margin-top: 70px;" />
+			<p:inputText styleClass="input_login" placeholder="Login"
+				value="#{loginFuncionarioBean.login.username}"
+				style="margin-top: 10px; margin-bottom: 10px;" required="true" id="required">
+				
+				<f:validateRequired />
+				
+			</p:inputText>
+			
+			<h:outputText value="Senha" class="label_login" />
+			<p:password styleClass="input_login" placeholder="Senha"
+				value="#{loginFuncionarioBean.login.senha}" style="margin-top: 10px;"
+				required="true" >
+				
+			<f:validateLength for = "password" minimum = "5" maximum = "10" />	
+
+			</p:password>
+		</div>
+		<p:commandButton class="button_login"
+			action="#{loginFuncionarioBean.autenticarAdmin}" value="Login"
+			id="entrar_button" />
+
+		<h:messages for="required" style="color:red;margin:8px;" />
+		</h:form>
+	</div>
+
+
+</h:body>
+</html>
