@@ -11,20 +11,19 @@ import br.com.StartHair.model.Login;
 @SessionScoped
 public class LoginFuncionarioBean implements Serializable {
 
-	private Login login;
+	private Login login = new Login();
 	
-	public boolean autenticarAdmin() {
+	public String autenticarAdmin() {
 		
-		this.login = new Login();
 		
 		if("admin".equals(login.getUsername())&&"admin".equals(login.getSenha())) {
 			System.out.println("Validou");
-			return true;
+			return "Validado";
 		}
 		
 		else {
 			System.out.println("Nao validou");
-			return false;
+			return "Nao validado";
 		}
 		
 	}
