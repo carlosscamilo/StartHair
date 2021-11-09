@@ -206,3 +206,10 @@ transition: all ease 0.5s;
     .customPanelGrid .ui-panelgrid-content {
         align-items: center;
     }
+.conteudo {
+	display: flex; flex-direction: column; flex-wrap: wrap;
+text-align: center;
+
+
+
+}

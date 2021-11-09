@@ -1,3 +1,5 @@
+-- starthair.categoria definition
+
 -- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
 --
 -- Host: localhost    Database: starthair
@@ -25,11 +27,11 @@ DROP TABLE IF EXISTS `agendamento`;
 CREATE TABLE `agendamento` (
   `id` int NOT NULL AUTO_INCREMENT,
   `data_agendamento` datetime NOT NULL,
-  `clientes_id` int NOT NULL,
+  `cliente_id` int NOT NULL,
   `servico` varchar(200) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_agendamento_clientes1_idx` (`clientes_id`),
-  CONSTRAINT `fk_agendamento_clientes1` FOREIGN KEY (`clientes_id`) REFERENCES `cliente` (`id`)
+  KEY `fk_agendamento_cliente1_idx` (`cliente_id`),
+  CONSTRAINT `fk_agendamento_cliente1` FOREIGN KEY (`cliente_id`) REFERENCES `cliente` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -212,7 +214,7 @@ CREATE TABLE `usuario` (
   `username` varchar(200) NOT NULL,
   `password` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
