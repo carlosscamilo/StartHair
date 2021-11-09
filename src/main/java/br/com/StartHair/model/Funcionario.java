@@ -8,12 +8,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="funcionario")
 public class Funcionario {
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 6ad8b5334deb18bbdd39a6fbee9659e131f5fb57
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	private String nome;
 	private String cpf;
 	private String sexo;
@@ -27,8 +33,12 @@ public class Funcionario {
 	@OneToOne
 	@JoinColumn(name = "id_usuario")
 	private Usuario usuario;
+	
+	public Funcionario() {
+		super();
+	}
 
-	public Funcionario(int id, String nome, String cpf, String sexo, Date data_nascimento, String email, String senha,
+	public Funcionario(Integer id, String nome, String cpf, String sexo, Date data_nascimento, String email, String senha,
 			String telefone, String endereco, String cidade, String estado, Usuario usuario) {
 		super();
 		this.id = id;
@@ -45,7 +55,7 @@ public class Funcionario {
 		this.usuario = usuario;
 	}
 
-	public Funcionario(int id, String nome, String cpf, Date data_nascimento, String email, String senha,
+	public Funcionario(Integer id, String nome, String cpf, Date data_nascimento, String email, String senha,
 			String telefone, String endereco, String cidade, String estado, Usuario usuario) {
 		super();
 		this.id = id;
@@ -61,11 +71,11 @@ public class Funcionario {
 		this.usuario = usuario;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

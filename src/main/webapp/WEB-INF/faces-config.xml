@@ -11,16 +11,34 @@
 			<to-view-id>login.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
-		
-		
-		
+
+
+
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>login.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>GO_INDEX</from-outcome>
 			<to-view-id>index.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>loginFuncionario.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>GO_CADFUNCIONARIO</from-outcome>
+			<to-view-id>cadastroFuncionario.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>cadastroFuncionario.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>IR_LOGIN</from-outcome>
+			<to-view-id>login.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
