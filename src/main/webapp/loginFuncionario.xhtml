@@ -13,7 +13,7 @@
  
 	<div class="login" style="margin-top: 40px;">
 		<h1 id="h1_login">Login Admin</h1>
-		<h:form>
+		<h:form id="form">
 		<div class="labels">
 			<h:outputText value="Login" class="label_login"
 				style="margin-top: 70px;" />
@@ -30,7 +30,7 @@
 				
 
 		</div>
-		<h:commandButton class="button_login"
+		<p:commandButton class="button_login"
 			action="#{loginFuncionarioBean.autenticarAdmin}" value="Login"
 			id="entrar_button" />
 

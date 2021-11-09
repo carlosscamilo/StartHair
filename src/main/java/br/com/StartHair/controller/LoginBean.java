@@ -5,7 +5,7 @@ import javax.inject.Named;
 
 @Named(value = "loginBean")
 @SessionScoped
-public class LoginBean {
+public class LoginBean  {
 	
 private String login;
 private String senha;

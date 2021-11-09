@@ -35,7 +35,7 @@ public class Cliente {
 		super();
 	}
 
-	public Cliente(int id, String nome, String cpf, String sexo, Date data_nascimento, String email, String senha,
+	public Cliente(Integer id, String nome, String cpf, String sexo, Date data_nascimento, String email, String senha,
 			String telefone, String endereco, String cidade, String estado, Usuario usuario) {
 		super();
 		this.id = id;
@@ -52,7 +52,7 @@ public class Cliente {
 		this.usuario = usuario;
 	}
 
-	public Cliente(int id, String nome, String cpf, Date data_nascimento, String email, String senha, String telefone,
+	public Cliente(Integer id, String nome, String cpf, Date data_nascimento, String email, String senha, String telefone,
 			String endereco, String cidade, String estado, Usuario usuario) {
 		super();
 		this.id = id;
@@ -68,7 +68,7 @@ public class Cliente {
 		this.usuario = usuario;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
