@@ -10,31 +10,34 @@
 	<h:outputStylesheet library="css" name="telalogin.css" />
 </h:head>
 <h:body>
- 
+
 	<div class="login" style="margin-top: 40px;">
+
 		<h1 id="h1_login">Login Admin</h1>
+		<p:messages id="messagesLogin" />
 		<h:form id="form">
-		<div class="labels">
-			<h:outputText value="Login" class="label_login"
-				style="margin-top: 70px;" />
-			<p:inputText styleClass="input_login" placeholder="Login"
-				value="#{loginFuncionarioBean.login.username}"
-				style="margin-top: 10px; margin-bottom: 10px;" required="true" id="required"/>
-				
-			
-			
-			<h:outputText value="Senha" class="label_login" />
-			<p:password styleClass="input_login" placeholder="Senha"
-				value="#{loginFuncionarioBean.login.senha}" style="margin-top: 10px;"
-				required="true" />
-				
+			<div class="labels">
+				<h:outputText value="Login" class="label_login"
+					style="margin-top: 70px;" />
+				<p:inputText styleClass="input_login" placeholder="Login"
+					value="#{loginFuncionarioBean.login.username}"
+					style="margin-top: 10px; margin-bottom: 10px;" required="true"
+					id="required" requiredMessage="Campo Login necessário" />
 
-		</div>
-		<p:commandButton class="button_login"
-			action="#{loginFuncionarioBean.autenticarAdmin}" value="Login"
-			id="entrar_button" />
 
-		
+
+				<h:outputText value="Senha" class="label_login" />
+				<p:password styleClass="input_login" placeholder="Senha"
+					value="#{loginFuncionarioBean.login.senha}"
+					style="margin-top: 10px;" required="true" requiredMessage="Campo Senha necessário" />
+
+
+			</div>
+			<p:commandButton styleClass="button_login"
+				action="#{loginFuncionarioBean.autenticarAdmin}" value="Login"
+				id="entrar_button" update="messagesLogin" style="background-color: deeppink;"/>
+
+
 		</h:form>
 	</div>
 

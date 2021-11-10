@@ -22,7 +22,7 @@ public class Agendamento implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	@ManyToOne
-    private Cliente cliente;
+    private Usuario usuario;
 	
     private String servico;
     @Column(unique = true)
@@ -34,10 +34,10 @@ public class Agendamento implements Serializable {
 		super();
 	}
     
-	public Agendamento(Integer id, Cliente cliente, String servico, LocalDateTime data_agendamento) {
+	public Agendamento(Integer id, Usuario usuario, String servico, LocalDateTime data_agendamento) {
 		super();
 		this.id = id;
-		this.cliente = cliente;
+		this.usuario = usuario;
 		this.servico = servico;
 		this.data_agendamento = data_agendamento;
 	}
@@ -50,12 +50,12 @@ public class Agendamento implements Serializable {
 		this.id = id;
 	}
 
-	public Cliente getCliente() {
-		return cliente;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getServico() {

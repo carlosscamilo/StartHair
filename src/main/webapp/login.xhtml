@@ -10,30 +10,29 @@
 	<h:outputStylesheet library="css" name="telalogin.css" />
 </h:head>
 <h:body>
+<h:form id="form">
 	<div class="login">
 		<h1 id="h1_login">Login</h1>
+		<p:messages id="messagesLogin"/>
 		<h:outputText value="Email" class="label_login" />
-		<p:inputText styleClass="input_login" placeholder="Email" value="#{loginBean.login}" style="margin-top: 10px; margin-bottom: 10px;"/>
+		<p:inputText styleClass="input_login" placeholder="Email" value="#{loginBean.usuario.username}" style="margin-top: 10px; margin-bottom: 10px;" required="true" requiredMessage="Campo Login é obrigatório"/>
 		<h:outputText value="Senha" class="label_login" />
-		<p:password styleClass="input_login" placeholder="Senha" value="#{loginBean.senha}" style="margin-top: 10px;"/>
-		<h:messages/>
+		<p:password styleClass="input_login" placeholder="Senha" value="#{loginBean.usuario.password}" style="margin-top: 10px;" required="true" requiredMessage="Campo senha é obrigatório"/>
+		
 		<div class="links_login">
 
 			<a class="link_login" id="cadastre_login" href="http://localhost:8080/StartHair/cadastro.xhtml">Cadastre-se</a>
 			<a class="link_login" href="http://localhost:8080/StartHair/loginFuncionario.xhtml">Cadastre um funcionario</a>
 		</div>
 		<p:commandButton class="button_login" id="entrar_button"
-			action="#{loginBean.autenticar}" value="Login"  />
-		<div class="label_ou">
-			<h:outputText value="OU" />
-		</div>
+			action="#{loginBean.fazerLogin}" value="Login" update="messagesLogin" style="background-color: deeppink;" />
+	
 
-		<p:button type="button" id="gmail_button" class="button_login"
-			value="Gmail" />
+	
 
 
 	</div>
-
+</h:form>
 
 </h:body>
 </html>
