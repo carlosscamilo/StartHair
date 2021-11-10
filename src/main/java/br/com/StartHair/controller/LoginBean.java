@@ -1,29 +1,43 @@
 package br.com.StartHair.controller;
 
-import javax.faces.bean.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
+import br.com.StartHair.dao.UsuarioDAO;
+import br.com.StartHair.model.Usuario;
+
 @Named(value = "loginBean")
-@SessionScoped
-public class LoginBean  {
-	
-private String login;
-private String senha;
+@ViewScoped
+public class LoginBean {
 
+	private UsuarioDAO usuarioDAO = new UsuarioDAO();
+	private Usuario usuario = new Usuario();
 
-public String getLogin() {
-	return login;
-}
-public void setLogin(String login) {
-	this.login = login;
-}
-public String getSenha() {
-	return senha;
-}
-public void setSenha(String senha) {
-	this.senha = senha;
-}
-	
+	public String fazerLogin() {
+		Usuario usuarioConsultado = usuarioDAO.buscarPorUsernameAndEmail("carlos_camilo250@hotmail.com", "carlos250");
+				
+		if(usuarioConsultado!= null && usuarioConsultado.getCliente() != null) {
+			return "GO_INDEX";
+		}else if(usuarioConsultado!= null && usuarioConsultado.getFuncionario() != null) {
+			return "TELA_FUNCAO";
+		}
+		
+		usuario = new Usuario();
+		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Usuario nao encontrado!", "Erro no Login"));
+		return null;	
+
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 
 
 }

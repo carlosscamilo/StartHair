@@ -28,12 +28,13 @@ public class CadastroBean implements Serializable {
 		usuario.setUsername(cliente.getEmail());
 		usuario.setPassword(cliente.getSenha());
 		usuario.setCliente(cliente);
+		cliente.setUsuario(usuario);
 
 //		Usuario u = usuarioDAO.buscarPorUsernameAndEmail("Lenore@gmail.com", "123");
 //		System.out.println(u);
 		
 		clienteDAO.cadastrar(cliente);
-		usuarioDAO.cadastrar(usuario);
+		//usuarioDAO.cadastrar(usuario);
 
 		System.out.println("Cliente " + cliente.getNome() + " cadastrado com sucesso!");
 		

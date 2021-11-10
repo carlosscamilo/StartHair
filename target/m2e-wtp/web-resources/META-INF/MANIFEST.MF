@@ -1,10 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
-Built-By: Andrￃﾩ
-Build-Jdk: 14.0.2
-=======
-Built-By: REDE-002103
-Build-Jdk: 11.0.10
->>>>>>> 6ad8b5334deb18bbdd39a6fbee9659e131f5fb57
+Built-By: adjac
+Build-Jdk: 11.0.13
 Created-By: Maven Integration for Eclipse
 

@@ -1,6 +1,7 @@
 package br.com.StartHair.dao;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 
 import br.com.StartHair.model.Usuario;
 import br.com.StartHair.util.JPAUtil;
@@ -12,10 +13,15 @@ public class UsuarioDAO {
 	public Usuario buscarPorUsernameAndEmail(String username, String password) {
 		String jqpl = "SELECT u FROM Usuario u WHERE u.username = :username and u.password = :password";
 		
-		return em.createQuery(jqpl, Usuario.class)
+	try { 	
+		 return  em.createQuery(jqpl, Usuario.class)
 				 .setParameter("username", username)
 				 .setParameter("password", password)
 				 .getSingleResult();
+
+	}catch (NoResultException e) {
+        return null;
+  }
 	}
 
 	public void cadastrar(Usuario usuario) {
