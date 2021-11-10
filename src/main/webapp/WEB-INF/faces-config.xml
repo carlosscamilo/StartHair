@@ -60,4 +60,13 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>cadastra-agendamento.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cadastrou_agendamento</from-outcome>
+			<to-view-id>indexCliente.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
 </faces-config>

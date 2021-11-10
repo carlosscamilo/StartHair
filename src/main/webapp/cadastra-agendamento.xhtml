@@ -121,7 +121,7 @@
 
 			<p:linkButton value="Logout" icon="pi pi-fw pi-sign-out"
 				styleClass="ui-button-info" id="logout_button"
-				href="http://localhost:8080/StartHair/login.xhtml" />
+				href="http://localhost:8080/StartHair/login.xhtml"  />
 
 
 		</div>
@@ -157,7 +157,7 @@
 				value="#{cadastraAgendamentoBean.agendamento.data_agendamento}"
 				showTime="true" />
 		</div>
-		<p:commandButton value="Agendar" action="#{cadastraAgendamentoBean.agendar}" update="messagesLogin" />
+		<p:commandButton value="Agendar" action="#{cadastraAgendamentoBean.agendar}" update="messagesLogin" style="background-color: deeppink;" />
 	</div>
 </div>
 

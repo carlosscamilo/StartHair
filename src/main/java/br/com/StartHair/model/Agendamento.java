@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -22,7 +23,8 @@ public class Agendamento implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	@ManyToOne
-    private Usuario usuario;
+	@JoinColumn(name = "cliente_id")
+    private Cliente cliente;
 	
     private String servico;
     @Column(unique = true)
@@ -34,10 +36,10 @@ public class Agendamento implements Serializable {
 		super();
 	}
     
-	public Agendamento(Integer id, Usuario usuario, String servico, LocalDateTime data_agendamento) {
+	public Agendamento(Integer id, Cliente cliente, String servico, LocalDateTime data_agendamento) {
 		super();
 		this.id = id;
-		this.usuario = usuario;
+		this.cliente = cliente;
 		this.servico = servico;
 		this.data_agendamento = data_agendamento;
 	}
@@ -50,12 +52,12 @@ public class Agendamento implements Serializable {
 		this.id = id;
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
+	public Cliente getCliente() {
+		return cliente;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	public String getServico() {
