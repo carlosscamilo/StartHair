@@ -13,9 +13,10 @@
 	<h1 id="h1_cadastro">Cadastro</h1>
 	<h:form id="form">
 		<div class="container">
+			<p:messages id="messagesLogin" />
 			<h:outputText class="label_cadastro" value="Nome" />
 			<p:inputText styleClass="input_cadastro" required="true"
-				requiredMessage="Informe seu Nome"
+				requiredMessage="Campo nome é obrigatório"
 				value="#{cadastroBean.cliente.nome}" placeholder="Nome" id="nome" >
 			
 			</p:inputText>	
@@ -58,7 +59,7 @@
 
 			<h:outputText class="label_cadastro" value="Senha" />
 			<p:password styleClass="input_cadastro" required="true"
-				requiredMessage="Senha" value="#{cadastroBean.cliente.senha}"
+				requiredMessage="Campo Senha é obrigatório" value="#{cadastroBean.cliente.senha}"
 				toggleMask="true" redisplay="true" />
 
 
@@ -67,7 +68,7 @@
 
 			<p:inputMask id="phoneWithExt" styleClass="input_cadastro"
 				value="#{cadastroBean.cliente.telefone}" mask="(99) 99999-9999"
-				required="true" requiredMessage="Informe seu Telefone" />
+				required="true" requiredMessage="Campo telefone é obrigatório" />
 
 
 			<h:outputText class="label_cadastro" value="Endereço" />
@@ -78,12 +79,12 @@
 
 			<h:outputText class="label_cadastro" value="Cidade" />
 			<p:inputText styleClass="input_cadastro" required="true"
-				requiredMessage="Informe sua Cidade"
+				requiredMessage="Campo Cidade é obrigatório"
 				value="#{cadastroBean.cliente.cidade}" />
 
 			<h:outputText class="label_cadastro" value="Estado" />
 			<p:selectOneMenu styleClass="input_cadastro" required="true"
-				requiredMessage="Informe seu Estado"
+				requiredMessage="Campo Estado é obrigatório"
 				value="#{cadastroBean.cliente.estado}"
 				style="width: 278.988636px;margin-top: 0px;margin-right: 12px;">
 
@@ -127,7 +128,7 @@
 
 		<div class="submit_cadastro">
 			<p:commandButton id="button_submit" value=" Cadastrar"
-				action="#{cadastroBean.cadastrarCliente}"  />
+				action="#{cadastroBean.cadastrarCliente}" update="messagesLogin" />
 		</div>
 
 	</h:form>

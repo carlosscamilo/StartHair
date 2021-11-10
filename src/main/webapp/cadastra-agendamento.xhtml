@@ -136,8 +136,9 @@
 
 <h:form>
 <div class="conteudo">
+		<p:messages id="messagesLogin"/>
 		<div class="container">
-
+		
 		<p:outputLabel value="Informe o serviço" />
 		<p:selectOneMenu value="#{cadastraAgendamentoBean.agendamento.servico}">
 			<f:selectItem itemLabel="Selecione uma opção" itemValue="" />
@@ -156,7 +157,7 @@
 				value="#{cadastraAgendamentoBean.agendamento.data_agendamento}"
 				showTime="true" />
 		</div>
-		<p:commandButton value="Agendar" action="#{cadastraAgendamentoBean.agendar}" />
+		<p:commandButton value="Agendar" action="#{cadastraAgendamentoBean.agendar}" update="messagesLogin" />
 	</div>
 </div>
 

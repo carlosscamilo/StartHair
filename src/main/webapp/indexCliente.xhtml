@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Start Hair</title>
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+		integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<h:outputStylesheet library="css" name="index.css" />
+	<h:outputStylesheet library="css" name="lightslider.css" />
+
+	<h:outputScript library="js" name="index.js" />
+
+	<!--Jquery-->
+
+	<script type="text/javascript" src="resources/js/lightslider.js"></script>
+</h:head>
+<h:body>
+
+	<!-- HEADER -->
+
+	<style type="text/css">
+		.ui-g div {
+			
+			text-align: center;
+			
+				}
+	</style>
+
+	<div class="ui-g">
+
+		<div class="header">
+
+		<!-- MENU -->
+
+		<h:form id="form">
+
+
+
+			<div class="menu-header">
+
+				<p:commandButton id="dynaButton" value="Menu" type="button"
+					icon="pi pi-external-link" />
+					
+				<p:tieredMenu overlay="true" trigger="dynaButton" my="left top"
+					at="left bottom" style="width:200px">
+					
+					<p:menuitem value="Página Inicial" url="http://localhost:8080/StartHair/index.xhtml" />
+					
+					<p:submenu label="Produtos" icon="pi pi-fw pi-shopping-cart">
+					
+							<p:menuitem value="Shampoos e Condicionadores" url="http://localhost:8080/StartHair/catalogoShampooCliente.xhtml"/>
+							<p:menuitem value="Hidratações" url="http://localhost:8080/StartHair/catalogoHidratacoes.xhtml" />
+							<p:menuitem value="Tintas" url="http://localhost:8080/StartHair/catalogoTintas.xhtml" />
+						
+					</p:submenu>
+
+					<p:menuitem value="Carrinho" icon="pi pi-fw pi-shopping-cart" url="http://localhost:8080/StartHair/carrinho.xhtml"/>
+
+					<p:menuitem value="Agendamento" url="http://localhost:8080/StartHair/cadastra-agendamento.xhtml" icon="pi pi-fw pi-clock"/>
+
+
+					<p:menuitem value="Minhas Compras" icon="pi pi-fw pi-list"/>
+
+					
+					
+				
+				</p:tieredMenu>
+
+
+
+
+
+
+			</div>
+
+		</h:form>
+
+		<!-- MENU ACABOU -->
+
+		<!-- RESTO DO HEADER -->
+
+		<div class="inner_header">
+
+			<div class="logo_container">
+				<h:graphicImage id="logo" library="img" name="logo.png" />
+			</div>
+
+			<div class="ui-input-icon-left p-mr-2">
+				<i class="pi pi-fw pi-search" id="icone_pesquisa" />
+				<p:inputText id="barra_pesquisa" />
+			</div>
+
+		</div>
+
+
+		<p:linkButton value="Logout" icon="pi pi-fw pi-sign-out"
+			styleClass="ui-button-info" id="logout_button" href="http://localhost:8080/StartHair/login.xhtml"  />
+
+
+	</div>
+
+	<!-- HEADER ACABA AQUI -->
+	</div>
+
+	<div class="carossel_shampoo">
+
+		<h:outputLabel value="Shampoos e Condicionadores" styleClass="labels" />
+	</div>
+	<!--  -->
+
+
+
+	<div class="container">
+		<!--SLIDERRRR-->
+		<ul id="autoWidth" class="cs-hidden">
+
+			<!--1-->
+			<li class="item-a">
+				<!--slider box-->
+				<div class="box">
+
+					<p class="marvel">SHAMPOOS E CONDICIONADORES</p>
+					<!--model-->
+					<img src="resources/img/shampoo1.png" alt="" class="model"></img>
+					<div class="details">
+						<p>Shampoos e Condicionadores</p>
+					</div>
+				</div>
+			</li>
+
+			<!--2-->
+			<li class="item-a">
+				<!--slider box-->
+				<div class="box">
+
+					<p class="marvel">SHAMPOOS E CONDICIONADORES</p>
+					<!--model-->
+					<img src="resources/img/shampoo2.png" alt="" class="model"></img>
+					<div class="details">
+						<p>Shampoos e Condicionadores</p>
+					</div>
+				</div>
+			</li>
+
+			<!--3-->
+			<li class="item-a">
+				<!--slider box-->
+				<div class="box">
+
+					<p class="marvel">SHAMPOOS E CONDICIONADORES</p>
+					<!--model-->
+					<img src="resources/img/shampoo3.png" alt="" class="model"></img>
+					<div class="details">
+						<p>Shampoos e Condicionadores</p>
+					</div>
+				</div>
+			</li>
+
+			<!--4-->
+			<li class="item-a">
+				<!--slider box-->
+				<div class="box">
+
+					<p class="marvel">SHAMPOOS E CONDICIONADORES</p>
+					<!--model-->
+					<img src="resources/img/shampoo4.png" alt="" class="model"></img>
+					<div class="details">
+						<p>Shampoos e Condicionadores</p>
+					</div>
+				</div>
+			</li>
+			<!--5-->
+			<li class="item-a">
+				<!--slider box-->
+				<div class="box">
+
+					<p class="marvel">SHAMPOOS E CONDICIONADORES</p>
+					<!--model-->
+					<img src="resources/img/shampoo5.png" alt="" class="model"></img>
+					<div class="details">
+						<p>Shampoos e Condicionadores</p>
+					</div>
+				</div>
+			</li>
+			<!--6-->
+			<li class="item-a">
+				<!--slider box-->
+				<div class="box">
+
+					<p class="marvel">SHAMPOOS E CONDICIONADORES</p>
+					<!--model-->
+					<img src="resources/img/shampoo6.png" alt="" class="model"></img>
+					<div class="details">
+						<p>Shampoos e Condicionadores</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+
+	</div>
+
+
+
+
+
+
+
+	<!-- HEADER ACABA AQUI -->
+	<!-- CARROSEL DE HIDRATAÇÕES -->
+
+	<div class="carossel_shampoo">
+
+		<h:outputLabel value="Hidratações" styleClass="labels" />
+	</div>
+	<!--  -->
+
+
+
+	<div class="container">
+		<!--SLIDERRRR-->
+		<ul id="autoWidth2" class="cs-hidden">
+
+			<!--1-->
+			<li class="item-a">
+				<!--slider box-->
+				<div class="box">
+
+					<p class="marvel">HIDRATAÇÕES</p>
+					<!--model-->
+					<img src="resources/img/hidratacao1.png" alt="" class="model"></img>
+					<div class="details">
+						<p>Hidratações</p>
+					</div>
+				</div>
+			</li>
+
+			<!--2-->
+			<li class="item-a">
+				<!--slider box-->
+				<div class="box">
+
+					<p class="marvel">HIDRATAÇÕES</p>
+					<!--model-->
+					<img src="resources/img/hidratacao2.png" alt="" class="model"></img>
+					<div class="details">
+						<p>Hidratações</p>
+					</div>
+				</div>
+			</li>
+
+			<!--3-->
+			<li class="item-a">
+				<!--slider box-->
+				<div class="box">
+
+					<p class="marvel">HIDRATAÇÕES</p>
+					<!--model-->
+					<img src="resources/img/hidratacao3.png" alt="" class="model"></img>
+					<div class="details">
+						<p>Hidratações</p>
+					</div>
+				</div>
+			</li>
+
+			<!--4-->
+			<li class="item-a">
+				<!--slider box-->
+				<div class="box">
+
+					<p class="marvel">HIDRATAÇÕES</p>
+					<!--model-->
+					<img src="resources/img/hidratacao4.png" alt="" class="model"></img>
+					<div class="details">
+						<p>Hidratações</p>
+					</div>
+				</div>
+			</li>
+			<!--5-->
+			<li class="item-a">
+				<!--slider box-->
+				<div class="box">
+
+					<p class="marvel">HIDRATAÇÕES</p>
+					<!--model-->
+					<img src="resources/img/hidratacao5.png" alt="" class="model"></img>
+					<div class="details">
+						<p>Hidratações</p>
+					</div>
+				</div>
+			</li>
+			<!--6-->
+			<li class="item-a">
+				<!--slider box-->
+				<div class="box">
+
+					<p class="marvel">HIDRATAÇÕES</p>
+					<!--model-->
+					<img src="resources/img/hidratacao6.png" alt="" class="model"></img>
+					<div class="details">
+						<p>Hidratações</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+
+	</div>
+
+
+	<!-- CARROSEL DE TINTAS -->
+
+
+	<div class="carossel_shampoo">
+
+		<h:outputLabel value="Tintas" styleClass="labels" />
+	</div>
+
+
+	<div class="container">
+		<!--SLIDERRRR-->
+		<ul id="autoWidth3" class="cs-hidden">
+
+			<!--1-->
+			<li class="item-a">
+				<!--slider box-->
+				<div class="box">
+
+					<p class="marvel">TINTAS</p>
+					<!--model-->
+					<img src="resources/img/tinta1.png" alt="" class="model"></img>
+					<div class="details">
+						<p>Tintas</p>
+					</div>
+				</div>
+			</li>
+
+			<!--2-->
+			<li class="item-a">
+				<!--slider box-->
+				<div class="box">
+
+					<p class="marvel">TINTAS</p>
+					<!--model-->
+					<img src="resources/img/tinta2.png" alt="" class="model"></img>
+					<div class="details">
+						<p>Tintas</p>
+					</div>
+				</div>
+			</li>
+
+			<!--3-->
+			<li class="item-a">
+				<!--slider box-->
+				<div class="box">
+
+					<p class="marvel">TINTAS</p>
+					<!--model-->
+					<img src="resources/img/tinta3.png" alt="" class="model"></img>
+					<div class="details">
+						<p>Tintas</p>
+					</div>
+				</div>
+			</li>
+
+			<!--4-->
+			<li class="item-a">
+				<!--slider box-->
+				<div class="box">
+
+					<p class="marvel">TINTAS</p>
+					<!--model-->
+					<img src="resources/img/tinta4.png" alt="" class="model"></img>
+					<div class="details">
+						<p>Tintas</p>
+					</div>
+				</div>
+			</li>
+			<!--5-->
+			<li class="item-a">
+				<!--slider box-->
+				<div class="box">
+
+					<p class="marvel">TINTAS</p>
+					<!--model-->
+					<img src="resources/img/tinta5.png" alt="" class="model"></img>
+					<div class="details">
+						<p>Tintas</p>
+					</div>
+				</div>
+			</li>
+			<!--6-->
+			<li class="item-a">
+				<!--slider box-->
+				<div class="box">
+
+					<p class="marvel">TINTAS</p>
+					<!--model-->
+					<img src="resources/img/tinta6.png" alt="" class="model"></img>
+					<div class="details">
+						<p>Tintas</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+
+	</div>
+
+
+
+</h:body>
+
+
+</html>

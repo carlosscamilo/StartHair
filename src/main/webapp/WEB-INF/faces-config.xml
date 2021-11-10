@@ -51,4 +51,13 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>login.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>TELA_CLI</from-outcome>
+			<to-view-id>indexCliente.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
 </faces-config>

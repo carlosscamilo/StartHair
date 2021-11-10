@@ -7,36 +7,35 @@ import javax.inject.Named;
 
 import br.com.StartHair.dao.AgendamentoDAO;
 import br.com.StartHair.dao.ClienteDAO;
+import br.com.StartHair.dao.UsuarioDAO;
 import br.com.StartHair.model.Agendamento;
 import br.com.StartHair.model.Cliente;
+import br.com.StartHair.model.Usuario;
 
 @Named(value="cadastraAgendamentoBean")
 @SessionScoped
 public class CadastraAgendamentoBean implements Serializable {
 
-	private Cliente cliente = new Cliente();
 	private Agendamento agendamento = new Agendamento();
 	private AgendamentoDAO agendamentoDAO ;
-	private ClienteDAO clienteDAO; 
+
+	private Usuario usuario = new Usuario();
+	private UsuarioDAO usuarioDAO;
+	
 	public String agendar(){
 		
-		this.clienteDAO = new ClienteDAO();
+
+		this.usuarioDAO = new UsuarioDAO();
 		
-		cliente=clienteDAO.buscarPorId(1);
+		usuario = usuarioDAO.buscarPorId(1);
+		
 		
 		this.agendamentoDAO = new AgendamentoDAO();
-		agendamento.setCliente(cliente);
+		agendamento.setUsuario(usuario);
 		agendamentoDAO.cadastrar(agendamento);
 		return "";
 	}
 
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
 
 	public Agendamento getAgendamento() {
 		return agendamento;
@@ -52,6 +51,16 @@ public class CadastraAgendamentoBean implements Serializable {
 
 	public void setAgendamentoDAO(AgendamentoDAO agendamentoDAO) {
 		this.agendamentoDAO = agendamentoDAO;
+	}
+
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
 	
