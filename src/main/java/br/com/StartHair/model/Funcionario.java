@@ -13,10 +13,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="funcionario")
 public class Funcionario {
-<<<<<<< HEAD
-=======
-	
->>>>>>> 6ad8b5334deb18bbdd39a6fbee9659e131f5fb57
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;

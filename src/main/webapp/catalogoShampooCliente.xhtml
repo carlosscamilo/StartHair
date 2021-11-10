@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+	<title>Start Hair</title>
+	<h:outputStylesheet library="css" name="menuvendas.css" />
+	<link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/"></link>
+
+</h:head>
+<h:body>
+
+	<!-- HEADER -->
+
+	<style type="text/css">
+		.ui-g div {
+			
+			text-align: center;
+			
+				}
+	</style>
+
+	<div class="ui-g">
+
+		<div class="header">
+
+		<!-- MENU -->
+
+		<h:form id="form">
+
+
+
+			<div class="menu-header">
+
+				<p:commandButton id="dynaButton" value="Menu" type="button"
+					icon="pi pi-external-link" />
+					
+				<p:tieredMenu overlay="true" trigger="dynaButton" my="left top"
+					at="left bottom" style="width:200px">
+					
+					<p:menuitem value="Página Inicial" url="http://localhost:8080/StartHair/index.xhtml" />
+					
+					<p:submenu label="Produtos" icon="pi pi-fw pi-shopping-cart">
+					
+							<p:menuitem value="Shampoos e Condicionadores" url="http://localhost:8080/StartHair/catalogoShampooCliente.xhtml"/>
+							<p:menuitem value="Hidratações" url="http://localhost:8080/StartHair/catalogoHidratacoesCliente.xhtml" />
+							<p:menuitem value="Tintas" url="http://localhost:8080/StartHair/catalogoTintasCliente.xhtml" />
+						
+					</p:submenu>
+
+					<p:menuitem value="Carrinho" icon="pi pi-fw pi-shopping-cart" url="http://localhost:8080/StartHair/carrinho.xhtml"/>
+
+					<p:menuitem value="Agendamento" url="http://localhost:8080/StartHair/servicos.xhtml" icon="pi pi-fw pi-clock"/>
+
+
+					<p:menuitem value="Minhas Compras" icon="pi pi-fw pi-list"/>
+
+				
+					
+				
+				</p:tieredMenu>
+
+
+
+
+
+
+			</div>
+
+		</h:form>
+
+		<!-- MENU ACABOU -->
+
+		<!-- RESTO DO HEADER -->
+
+		<div class="inner_header">
+
+			<div class="logo_container">
+				<h:graphicImage id="logo" library="img" name="logo.png" />
+			</div>
+
+			<div class="ui-input-icon-left p-mr-2">
+				<i class="pi pi-fw pi-search" id="icone_pesquisa" />
+				<p:inputText id="barra_pesquisa" />
+			</div>
+
+		</div>
+
+
+		<p:linkButton value="Logout" icon="pi pi-fw pi-sign-out"
+			styleClass="ui-button-info" id="logout_button" href="http://localhost:8080/StartHair/login.xhtml"  />
+
+
+	</div>
+
+	<!-- HEADER ACABA AQUI -->
+	</div>
+	
+	
+	<div class="sessao">
+		<h1>Shampoos e Condicionadores</h1>
+	</div>
+
+	<div class="amostra-itens">
+		<div class="ordernacoes">
+			<div class="ordenar">
+				<h:outputLabel class="label_ordenar" value="Ordenar" />
+				<h:selectOneMenu class="select_ordenar">
+					<f:selectItem itemLabel="Escolha" />
+					<f:selectItem itemLabel="Preço Maior" />
+					<f:selectItem itemLabel="Preço Menor" />
+				</h:selectOneMenu>
+			</div>
+			<div class="exibir">
+				<h:outputLabel class="label_ordenar" value="Exibir" />
+				<h:selectOneMenu class="select_ordenar">
+					<f:selectItem itemLabel="Escolha" />
+					<f:selectItem itemLabel="Exibir 10 por pagina" />
+					<f:selectItem itemLabel="Exibir 20 por pagina" />
+					<f:selectItem itemLabel="Exibir 40 por pagina" />
+					<f:selectItem itemLabel="Exibir 80 por pagina" />
+					<f:selectItem itemLabel="Exibir 100 por pagina" />
+				</h:selectOneMenu>
+			</div>
+		</div>
+		<!-- produtos -->
+		<div class="cards">
+			<div class="produto">
+				<h:graphicImage library="img" name="shampoo1.png" styleClass="model" />
+				<p class="nome_produto">Shampoo Truss</p>
+				<p>Valor: R$120</p>
+				<p:commandButton value="Adicione ao carrinho"
+					icon="pi pi-shopping-cart" />
+			</div>
+			<div class="produto">
+				<h:graphicImage library="img" name="shampoo2.png" styleClass="model" />
+				<p class="nome_produto">Shampoo Truss</p>
+				<p>Valor: R$120</p>
+				<p:commandButton value="Adicione ao carrinho"
+					icon="pi pi-shopping-cart" />
+			</div>
+			<div class="produto">
+				<h:graphicImage library="img" name="shampoo3.png" styleClass="model" />
+				<p class="nome_produto">Shampoo Truss</p>
+				<p>Valor: R$120</p>
+				<p:commandButton value="Adicione ao carrinho"
+					icon="pi pi-shopping-cart" />
+			</div>
+			<div class="produto">
+				<h:graphicImage library="img" name="shampoo4.png" styleClass="model" />
+				<p class="nome_produto">Shampoo Truss</p>
+				<p>Valor: R$120</p>
+				<p:commandButton value="Adicione ao carrinho"
+					icon="pi pi-shopping-cart" />
+			</div>
+			<div class="produto">
+				<h:graphicImage library="img" name="shampoo5.png" styleClass="model" />
+				<p class="nome_produto">Shampoo Truss</p>
+				<p>Valor: R$120</p>
+				<p:commandButton value="Adicione ao carrinho"
+					icon="pi pi-shopping-cart" />
+			</div>
+			<div class="produto">
+				<h:graphicImage library="img" name="shampoo6.png" styleClass="model" />
+				<p class="nome_produto">Shampoo Truss</p>
+				<p>Valor: R$120</p>
+				<p:commandButton value="Adicione ao carrinho"
+					icon="pi pi-shopping-cart" />
+			</div>
+			<div class="produto">
+				<h:graphicImage library="img" name="shampoo2.png" styleClass="model" />
+				<p class="nome_produto">Shampoo Truss</p>
+				<p>Valor: R$120</p>
+				<i class="fas fa-cart-plus"></i>
+				<p:commandButton value="Adicione ao carrinho"
+					icon="pi pi-shopping-cart" />
+			</div>
+			<div class="produto">
+				<h:graphicImage library="img" name="shampoo1.png" styleClass="model" />
+				<p class="nome_produto">Shampoo Truss</p>
+				<p>Valor: R$120</p>
+				<p:commandButton value="Adicione ao carrinho"
+					icon="pi pi-shopping-cart" />
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+</h:body>
+</html>
