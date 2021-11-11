@@ -1,5 +1,7 @@
 package br.com.StartHair.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 
 import br.com.StartHair.model.Cliente;
@@ -37,4 +39,7 @@ public class ClienteDAO {
 		return em.find(Cliente.class, email);
 	}
 	
+	public List<Cliente> buscarClientes() {
+        return em.createQuery("from cliente").getResultList();
+    }
 }

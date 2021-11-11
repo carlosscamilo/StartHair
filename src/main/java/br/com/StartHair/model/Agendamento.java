@@ -8,11 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-@Entity
+@Entity(name = "agendamento")
 @Table(name="agendamento")
 public class Agendamento implements Serializable {
 
@@ -23,7 +22,6 @@ public class Agendamento implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	@ManyToOne
-	@JoinColumn(name = "cliente_id")
     private Cliente cliente;
 	
     private String servico;

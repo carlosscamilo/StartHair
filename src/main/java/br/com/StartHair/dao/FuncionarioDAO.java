@@ -1,7 +1,10 @@
 package br.com.StartHair.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 
+import br.com.StartHair.model.Agendamento;
 import br.com.StartHair.model.Funcionario;
 import br.com.StartHair.util.JPAUtil;
 
@@ -37,4 +40,7 @@ public class FuncionarioDAO {
 		return em.find(Funcionario.class, email);
 	}
 	
+	public List<Funcionario> buscarFuncionarios() {
+        return em.createQuery("from funcionario").getResultList();
+    }
 }

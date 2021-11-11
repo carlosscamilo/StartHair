@@ -1,6 +1,10 @@
 package br.com.StartHair.dao;
 
+import java.util.Collection;
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import br.com.StartHair.model.Agendamento;
 import br.com.StartHair.model.Cliente;
@@ -38,5 +42,7 @@ public class AgendamentoDAO {
 		return em.find(Agendamento.class, cliente);
 	}
 	
-	
+	public List<Agendamento> buscarAgendamentos() {
+        return em.createQuery("from agendamento").getResultList();
+    }
 }
