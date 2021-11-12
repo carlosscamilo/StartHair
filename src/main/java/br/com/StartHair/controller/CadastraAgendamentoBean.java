@@ -27,6 +27,7 @@ public class CadastraAgendamentoBean implements Serializable {
 		this.agendamentoDAO = new AgendamentoDAO();
 		agendamento.setCliente(cliente);
 		agendamentoDAO.cadastrar(agendamento);
+		System.out.println(agendamento.toString());
 		return "";
 	}
 

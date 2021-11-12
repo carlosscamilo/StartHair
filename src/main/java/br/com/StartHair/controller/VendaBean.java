@@ -18,18 +18,16 @@ public class VendaBean implements Serializable {
 	private Venda venda = new Venda();
 	private VendaDAO vendaDAO;
 
-	private Cliente cliente = new Cliente();
-	private ClienteDAO clienteDAO;
+	
 
 	public String realizaVenda() {
 
 		
-		this.clienteDAO = new ClienteDAO();
-		cliente = clienteDAO.buscarPorId(1);
+		
 		
 		this.vendaDAO = new VendaDAO();
-		//Gambiarra pra setar o cliente
-		venda.setCliente(cliente);
+		
+		
 		vendaDAO.cadastrar(venda);
 
 		

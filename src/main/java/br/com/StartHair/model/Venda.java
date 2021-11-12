@@ -22,14 +22,14 @@ public class Venda implements Serializable {
 	private int parcelas;
 	private double valor_total;
 	private double valor_pago;
-	private Cliente cliente;
+	
 
 	public Venda() {
 		super();
 	}
 
 	public Venda(Integer id, LocalDateTime data_pedido, int desconto, String forma_pagamento, int parcelas,
-			double valor_total, double valor_pago, Cliente cliente) {
+			double valor_total, double valor_pago) {
 		super();
 		this.id = id;
 		this.data_pedido = data_pedido;
@@ -38,7 +38,7 @@ public class Venda implements Serializable {
 		this.parcelas = parcelas;
 		this.valor_total = valor_total;
 		this.valor_pago = valor_pago;
-		this.cliente = cliente;
+
 	}
 
 	public Integer getId() {
@@ -97,13 +97,7 @@ public class Venda implements Serializable {
 		this.valor_pago = valor_pago;
 	}
 
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
+	
 
 	
 	
