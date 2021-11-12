@@ -18,6 +18,7 @@ public class CadastraAgendamentoBean implements Serializable {
 	private Agendamento agendamento = new Agendamento();
 	private AgendamentoDAO agendamentoDAO ;
 	private ClienteDAO clienteDAO; 
+	
 	public String agendar(){
 		
 		this.clienteDAO = new ClienteDAO();
@@ -30,6 +31,11 @@ public class CadastraAgendamentoBean implements Serializable {
 	
 		
 		return "";
+	}
+	public String consulta() {
+		agendamentoDAO.buscarAgendamentos();		
+		return "";
+		
 	}
 
 	public Cliente getCliente() {

@@ -13,7 +13,6 @@ import br.com.StartHair.model.Usuario;
 
 @Named(value = "cadastroBean")
 @SessionScoped
-@ManagedBean
 public class CadastroBean implements Serializable {
 
 	private ClienteDAO clienteDAO;
