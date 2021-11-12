@@ -21,7 +21,7 @@ public class VendaBean implements Serializable {
 	private Cliente cliente = new Cliente();
 	private ClienteDAO clienteDAO;
 
-	public String agendar() {
+	public String realizaVenda() {
 
 		
 		this.clienteDAO = new ClienteDAO();
