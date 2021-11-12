@@ -2,6 +2,7 @@ package br.com.StartHair.controller;
 
 import java.io.Serializable;
 
+import javax.annotation.ManagedBean;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
@@ -12,6 +13,7 @@ import br.com.StartHair.model.Usuario;
 
 @Named(value = "cadastroBean")
 @SessionScoped
+@ManagedBean
 public class CadastroBean implements Serializable {
 
 	private ClienteDAO clienteDAO;
