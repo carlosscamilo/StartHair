@@ -132,14 +132,26 @@
 
 <div class="conteudo">
 <h1>Lista agendamento</h1>
+<p:commandButton value="Listar agendamentos" action="#{cadastraAgendamentoBean.listarAgendamentos}"  style="background-color: deeppink;" />
 </div>
 
 <h:form>
      <div class="card">
         <p:dataTable value="#{cadastraAgendamentoBean.agendamentos}" var="agendamento" >
-            <p:column >
+            <p:column  headerText="Id">
                 <h:outputText value="#{agendamento.id}" />
             </p:column>
+            <p:column headerText="Cliente" >
+            
+                <h:outputText value="#{agendamento.cliente.id}" />
+            </p:column>
+            <p:column  headerText="Serviço">
+                <h:outputText value="#{agendamento.servico}" />
+            </p:column>
+            <p:column  headerText="Data agendamento">
+                <h:outputText value="#{agendamento.data_agendamento}" />
+            </p:column>
+            
 
            
         </p:dataTable>
