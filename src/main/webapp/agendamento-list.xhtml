@@ -135,25 +135,16 @@
 </div>
 
 <h:form>
-   <div class="card">
-        <p:dataTable var="agendamento" value="#{cadastraAgendamentoBean.agendamento}">
-            <p:column headerText="Code">
-                <h:outputText value="#{cadastraAgendamentoBean.agendamento.id}" />
+     <div class="card">
+        <p:dataTable value="#{cadastraAgendamentoBean.agendamentos}" var="agendamento" >
+            <p:column >
+                <h:outputText value="#{agendamento.id}" />
             </p:column>
 
-            <p:column headerText="Name">
-                <h:outputText value="" />
-            </p:column>
-
-            <p:column headerText="Category">
-                <h:outputText value="" />
-            </p:column>
-
-            <p:column headerText="Quantity">
-                <h:outputText value="" />
-            </p:column>
+           
         </p:dataTable>
     </div>
+    
 </h:form>
 
 </h:body>

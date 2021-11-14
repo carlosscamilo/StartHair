@@ -161,7 +161,16 @@
 	</div>
 </div>
 
+  <div class="card">
+        <p:dataTable value="#{cadastraAgendamentoBean.agendamentos}" var="agendamento" >
+            <p:column >
+                <h:outputText value="#{agendamento.id}" />
+            </p:column>
 
+           
+        </p:dataTable>
+    </div>
+    
 
 </h:form>
 

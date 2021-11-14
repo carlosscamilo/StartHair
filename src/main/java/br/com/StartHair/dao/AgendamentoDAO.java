@@ -13,6 +13,7 @@ import br.com.StartHair.util.JPAUtil;
 public class AgendamentoDAO {
 
 	private EntityManager em = JPAUtil.getEntityManager();
+	private Query query;
 
 	public void cadastrar(Agendamento agendamento) {
 		em.getTransaction().begin();
@@ -42,7 +43,18 @@ public class AgendamentoDAO {
 		return em.find(Agendamento.class, cliente);
 	}
 	
-	public List<Agendamento> buscarAgendamentos() {
-        return em.createQuery("from agendamento").getResultList();
+	
+	public List<Agendamento> buscarAgendamento() {
+		em.createNativeQuery("from agendamento").getResultList();
+		return em.createQuery("from agendamento").getResultList();
     }
+
+	public List<Agendamento> buscarAgendamentos() {
+		
+		Query q = em.createQuery("from agendamento", Agendamento.class);
+		
+		
+		return q.getResultList();
+    }
+
 }
