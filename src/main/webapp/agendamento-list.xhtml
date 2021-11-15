@@ -153,10 +153,10 @@
             <p:column  headerText="Data agendamento">
                 <h:outputText value="#{agendamento.data_agendamento}" />
             </p:column>
-            <p:column  headerText="Data agendamento">
-                <h:outputText value="#{agendamento.data_agendamento}" />
+            <p:column  headerText="">
+               <p:commandButton value="Editar" action="#{cadastraAgendamentoBean.deletar(agendamento)}"  style="background-color: deeppink;" />
             </p:column>
-            <p:column  headerText="Deletar">
+            <p:column  headerText="">
               <p:commandButton value="Deletar" action="#{cadastraAgendamentoBean.deletar(agendamento)}"  style="background-color: deeppink;" />
             </p:column>
             
