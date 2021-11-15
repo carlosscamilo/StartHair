@@ -3,6 +3,8 @@ package br.com.StartHair.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Query;
 
 import br.com.StartHair.model.Cliente;
 import br.com.StartHair.util.JPAUtil;
@@ -10,7 +12,8 @@ import br.com.StartHair.util.JPAUtil;
 public class ClienteDAO {
 
 	private EntityManager em = JPAUtil.getEntityManager();
-
+	private Query query;
+	
 	public void cadastrar(Cliente cliente) {
 		em.getTransaction().begin();
 		this.em.persist(cliente);
@@ -42,4 +45,6 @@ public class ClienteDAO {
 	public List<Cliente> buscarClientes() {
         return em.createQuery("from cliente").getResultList();
     }
+	
+	
 }

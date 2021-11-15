@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.event.AjaxBehaviorEvent;
 import javax.inject.Named;
 
 import br.com.StartHair.dao.AgendamentoDAO;
@@ -62,6 +63,13 @@ public void listarAgendamentos() {
 		listarAgendamentos();
 		return "";
 		
+	}
+	
+	public String editar() {
+		
+		generic.merge(agendamento);
+		listarAgendamentos();
+		return "";
 	}
 	
 	

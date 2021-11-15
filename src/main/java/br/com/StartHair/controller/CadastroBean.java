@@ -1,12 +1,18 @@
 package br.com.StartHair.controller;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
-import javax.annotation.ManagedBean;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.model.ListDataModel;
 import javax.inject.Named;
 
 import br.com.StartHair.dao.ClienteDAO;
+import br.com.StartHair.dao.GenericDAO;
 import br.com.StartHair.dao.UsuarioDAO;
 import br.com.StartHair.model.Cliente;
 import br.com.StartHair.model.Usuario;
@@ -17,9 +23,13 @@ public class CadastroBean implements Serializable {
 
 	private ClienteDAO clienteDAO;
 	private UsuarioDAO usuarioDAO;
-
+	private GenericDAO<Cliente> generic = new GenericDAO<Cliente>();
+	
 	private Cliente cliente = new Cliente();
 	private Usuario usuario = new Usuario();
+	 private List<Cliente> clientes = new ArrayList<Cliente>();
+	 private Map clienteItem=null;
+		private ListDataModel model; 
 	
 	public String cadastrarCliente() throws Exception {
 
@@ -48,6 +58,9 @@ public class CadastroBean implements Serializable {
 
 		return "GO_LOGIN";
 	}
+	
+	
+	
 
 	public void clear() {
 		this.cliente = new Cliente();
@@ -59,6 +72,12 @@ public class CadastroBean implements Serializable {
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
+	}
+	public List<Cliente> getClientes() {
+		return clientes;
+	}
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
 	}
 
 }

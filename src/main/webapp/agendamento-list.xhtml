@@ -24,6 +24,12 @@
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		
+		<script  type="javascript">
+function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
+}
+</script>
 	<h:outputStylesheet library="css" name="index.css" />
 </h:head>
 <h:body>
@@ -132,9 +138,53 @@
 
 <div class="conteudo">
 <h1>Lista agendamento</h1>
+<p id="demo"></p>
 
 </div>
 
+
+<h:form>
+<div class="conteudo">
+
+<p:outputLabel value="Id" />
+<h:outputText value="#{cadastraAgendamentoBean.agendamento.id}" readonly="true"/>
+
+
+		<p:messages id="messagesLogin"/>
+		<div class="container">
+		
+		<p:outputLabel value="Informe o serviço" />
+		<p:selectOneMenu value="#{cadastraAgendamentoBean.agendamento.servico}">
+			<f:selectItem itemLabel="Selecione uma opção" itemValue="" />
+			<f:selectItem itemLabel="Cabelo" itemValue="Cabelo" />
+			<f:selectItem itemLabel="Manicure" itemValue="Manicure" />
+			<f:selectItem itemLabel="Pedicure" itemValue="Pedicure" />
+
+		</p:selectOneMenu>
+		
+	
+		
+		<p:outputLabel value="Informe o serviço" />
+		<p:selectOneMenu value="#{cadastraAgendamentoBean.agendamento.cliente}" converter="selectListConverter">
+			 <f:selectItems value="#{cadastroBean.clientes}" var="cliente" itemValue="#{cliente}" itemLabel="#{cliente.nome}" />
+			
+
+		</p:selectOneMenu>
+		
+		
+		<div class="p-field p-col-12 p-md-4">
+	<p:outputLabel value="Informe a data e a hora" />
+			<p:datePicker id="time"
+				value="#{cadastraAgendamentoBean.agendamento.data_agendamento}"
+				showTime="true" />
+		</div>
+		<p:commandButton value="Agendar" action="#{cadastraAgendamentoBean.agendar}" update="messagesLogin" style="background-color: deeppink;" />
+	</div>
+</div>
+
+  
+
+</h:form>
 
 <h:form>
      <div class="card">
@@ -152,9 +202,10 @@
             </p:column>
             <p:column  headerText="Data agendamento">
                 <h:outputText value="#{agendamento.data_agendamento}" />
+                
             </p:column>
             <p:column  headerText="">
-               <p:commandButton value="Editar" action="#{cadastraAgendamentoBean.deletar(agendamento)}"  style="background-color: deeppink;" />
+               <p:commandButton onclick="display()" value="Editar" action="#{cadastraAgendamentoBean.editar}"  style="background-color: deeppink;" />
             </p:column>
             <p:column  headerText="">
               <p:commandButton value="Deletar" action="#{cadastraAgendamentoBean.deletar(agendamento)}"  style="background-color: deeppink;" />

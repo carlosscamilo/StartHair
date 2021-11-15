@@ -21,6 +21,20 @@ public class GenericDAO<E> {
 		em.getTransaction().commit();
 		
 	}
+	
+	public E merge(E entidade) {
+		EntityManager em = JPAUtil.getEntityManager();
+		EntityTransaction et = em.getTransaction();
+		
+		
+		em.getTransaction().begin();
+		em.persist(entidade);
+	E retorno = em.merge(entidade);
+		em.getTransaction().commit();
+		return retorno;
+	}
+	
+	
 	public void deletePorId(E entidade) {
 		EntityManager em = JPAUtil.getEntityManager();
 		EntityTransaction et = em.getTransaction();
