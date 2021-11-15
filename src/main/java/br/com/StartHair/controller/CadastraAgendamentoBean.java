@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
@@ -49,12 +50,23 @@ public String salvar() {
 	listarAgendamentos();
 	return "";
 }
-	
+	@PostConstruct
 public void listarAgendamentos() {
 	 agendamentos = generic.getListEntity(Agendamento.class);
 	
 }
 
+	public String deletar(Agendamento agendamento) {
+		
+		generic.deletePorId(agendamento);
+		listarAgendamentos();
+		return "";
+		
+	}
+	
+	
+	
+	
 
 	public Cliente getCliente() {
 		return cliente;

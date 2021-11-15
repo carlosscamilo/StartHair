@@ -21,6 +21,19 @@ public class GenericDAO<E> {
 		em.getTransaction().commit();
 		
 	}
+	public void deletePorId(E entidade) {
+		EntityManager em = JPAUtil.getEntityManager();
+		EntityTransaction et = em.getTransaction();
+		
+		
+		em.getTransaction().begin();
+		
+		Object id = JPAUtil.getPrimaryKey(entidade);
+		em.createQuery("delete from " + entidade.getClass().getCanonicalName() + " where id = " + id).executeUpdate();
+		
+		em.getTransaction().commit();
+		
+	}
 	
 	public List<E> getListEntity(Class<E> entidade){
 		EntityManager em = JPAUtil.getEntityManager();
@@ -32,4 +45,7 @@ public class GenericDAO<E> {
 		em.getTransaction().commit();
 		return retorno;
 	}
+
+	
+	
 }
