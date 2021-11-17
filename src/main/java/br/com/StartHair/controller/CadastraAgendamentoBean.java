@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
-import javax.faces.event.AjaxBehaviorEvent;
+import javax.faces.bean.ViewScoped;
+import javax.faces.model.SelectItem;
 import javax.inject.Named;
 
 import br.com.StartHair.dao.AgendamentoDAO;
@@ -16,7 +16,7 @@ import br.com.StartHair.model.Agendamento;
 import br.com.StartHair.model.Cliente;
 
 @Named(value="cadastraAgendamentoBean")
-@SessionScoped
+@ViewScoped
 public class CadastraAgendamentoBean implements Serializable {
 
 	private Cliente cliente = new Cliente();
@@ -65,13 +65,21 @@ public void listarAgendamentos() {
 		
 	}
 	
-	public String editar() {
-		
+	public String editar(Agendamento agendamento) {
+
 		generic.merge(agendamento);
-		listarAgendamentos();
+		
+ 
+		
 		return "";
 	}
+	public String save() {
+		
+		generic.salvar(agendamento);
 	
+		
+		return "";
+	}
 	
 	
 	

@@ -23,6 +23,7 @@ public class AgendamentoDAO {
 	}
 
 	public void atualizar(Agendamento agendamento) {
+		
 		this.em.merge(agendamento);
 	}
 

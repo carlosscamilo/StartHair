@@ -3,14 +3,15 @@ package br.com.StartHair.model;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 @Entity(name = "agendamento")
 @Table(name="agendamento")
 public class Agendamento implements Serializable {
@@ -21,12 +22,16 @@ public class Agendamento implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
-	@ManyToOne
-    private Cliente cliente;
 	
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+    private Cliente cliente;
+	  @Column
     private String servico;
     @Column(unique = true)
     private LocalDateTime data_agendamento;
+    @Transient
+    private transient boolean editing;
 
     
     
@@ -73,6 +78,21 @@ public class Agendamento implements Serializable {
 	public void setData_agendamento(LocalDateTime data_agendamento) {
 		this.data_agendamento = data_agendamento;
 	}
+
+	public boolean isEditing() {
+		return editing;
+	}
+
+	public void setEditing(boolean editing) {
+		this.editing = editing;
+	}
+
+	@Override
+	public String toString() {
+		return "Agendamento [id=" + id + ", cliente=" + cliente + ", servico=" + servico + ", data_agendamento="
+				+ data_agendamento + "]";
+	}
+
 	
 	
     

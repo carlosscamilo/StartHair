@@ -28,9 +28,13 @@ public class GenericDAO<E> {
 		
 		
 		em.getTransaction().begin();
-		em.persist(entidade);
+		
+		
 	E retorno = em.merge(entidade);
+	
+	em.flush();
 		em.getTransaction().commit();
+		em.close();
 		return retorno;
 	}
 	
