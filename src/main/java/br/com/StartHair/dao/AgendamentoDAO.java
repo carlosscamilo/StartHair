@@ -1,6 +1,5 @@
 package br.com.StartHair.dao;
 
-import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -23,8 +22,10 @@ public class AgendamentoDAO {
 	}
 
 	public void atualizar(Agendamento agendamento) {
-		
+		em.getTransaction().begin();
 		this.em.merge(agendamento);
+		em.flush();
+		em.getTransaction().commit();
 	}
 
 	public void remover(Agendamento agendamento) {
@@ -39,24 +40,21 @@ public class AgendamentoDAO {
 	public Agendamento buscarPorServico(String servico) {
 		return em.find(Agendamento.class, servico);
 	}
-	
+
 	public Agendamento buscarPorCliente(Cliente cliente) {
 		return em.find(Agendamento.class, cliente);
 	}
-	
-	
+
 	public List<Agendamento> buscarAgendamento() {
 		em.createNativeQuery("from agendamento").getResultList();
 		return em.createQuery("from agendamento").getResultList();
-    }
+	}
 
 	public List<Agendamento> buscarAgendamentos() {
-		
-		Query q = em.createQuery("from agendamento", Agendamento.class);
-		
-		
-		return q.getResultList();
-    }
 
-	
+		Query q = em.createQuery("from agendamento", Agendamento.class);
+
+		return q.getResultList();
+	}
+
 }

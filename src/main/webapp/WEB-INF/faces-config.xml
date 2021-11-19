@@ -51,7 +51,7 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>login.xhtml</from-view-id>
 		<navigation-case>
@@ -60,12 +60,20 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>cadastra-agendamento.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>cadastrou_agendamento</from-outcome>
 			<to-view-id>indexCliente.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>agendamento-list.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>GO_EDITAR</from-outcome>
+			<to-view-id>listar.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>

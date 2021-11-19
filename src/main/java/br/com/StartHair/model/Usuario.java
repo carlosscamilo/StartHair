@@ -19,8 +19,8 @@ public class Usuario {
 
 	@OneToOne(mappedBy = "usuario")
 	private Cliente cliente;
-	
-	@OneToOne(mappedBy="usuario")
+
+	@OneToOne(mappedBy = "usuario")
 	private Funcionario funcionario;
 
 	public Cliente getCliente() {
@@ -62,7 +62,4 @@ public class Usuario {
 	public void setFuncionario(Funcionario funcionario) {
 		this.funcionario = funcionario;
 	}
-
-	
-	
 }

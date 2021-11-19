@@ -18,47 +18,26 @@ public class VendaBean implements Serializable {
 	private Venda venda = new Venda();
 	private VendaDAO vendaDAO;
 
-	
-
 	public String realizaVenda() {
-
-		
-		
-		
 		this.vendaDAO = new VendaDAO();
-		
-		
 		vendaDAO.cadastrar(venda);
-
-		
-		
 		return "";
 	}
-
-
 
 	public Venda getVenda() {
 		return venda;
 	}
 
-
-
 	public void setVenda(Venda venda) {
 		this.venda = venda;
 	}
-
-
 
 	public VendaDAO getVendaDAO() {
 		return vendaDAO;
 	}
 
-
-
 	public void setVendaDAO(VendaDAO vendaDAO) {
 		this.vendaDAO = vendaDAO;
 	}
 
-	
-	
 }
