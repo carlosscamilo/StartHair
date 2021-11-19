@@ -9,19 +9,17 @@ import br.com.StartHair.util.JPAUtil;
 public class UsuarioDAO {
 
 	private EntityManager em = JPAUtil.getEntityManager();
-	
+
 	public Usuario buscarPorUsernameAndEmail(String username, String password) {
 		String jqpl = "SELECT u FROM Usuario u WHERE u.username = :username and u.password = :password";
-		
-	try { 	
-		 return  em.createQuery(jqpl, Usuario.class)
-				 .setParameter("username", username)
-				 .setParameter("password", password)
-				 .getSingleResult();
 
-	}catch (NoResultException e) {
-        return null;
-  }
+		try {
+			return em.createQuery(jqpl, Usuario.class).setParameter("username", username)
+					.setParameter("password", password).getSingleResult();
+
+		} catch (NoResultException e) {
+			return null;
+		}
 	}
 
 	public void cadastrar(Usuario usuario) {
@@ -47,10 +45,9 @@ public class UsuarioDAO {
 	public Usuario buscarPorNome(String nome) {
 		return em.find(Usuario.class, nome);
 	}
-	
+
 	public Usuario buscarPorEmail(String email) {
 		return em.find(Usuario.class, email);
 	}
-	
-	
+
 }

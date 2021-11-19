@@ -14,8 +14,6 @@ import javax.persistence.Table;
 @Table(name = "venda")
 public class Venda implements Serializable {
 
-	
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -41,8 +39,7 @@ public class Venda implements Serializable {
 		this.valor_total = valor_total;
 		this.valor_pago = valor_pago;
 	}
-	
-	
+
 	public Integer getId() {
 		return id;
 	}
@@ -98,5 +95,4 @@ public class Venda implements Serializable {
 	public void setValor_pago(double valor_pago) {
 		this.valor_pago = valor_pago;
 	}
-
 }

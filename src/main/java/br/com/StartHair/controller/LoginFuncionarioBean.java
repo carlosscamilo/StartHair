@@ -10,28 +10,27 @@ import javax.inject.Named;
 
 import br.com.StartHair.model.Login;
 
-
 @Named
 @SessionScoped
 public class LoginFuncionarioBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Inject
 	private Login login;
-	
+
 	private List<Login> logins = new ArrayList<Login>();
-	
+
 	public String autenticarAdmin() {
-		if("admin".equals(login.getUsername())&&"admin".equals(login.getSenha())) {
+		if ("admin".equals(login.getUsername()) && "admin".equals(login.getSenha())) {
 			System.out.println("Validou");
 			return "GO_CADFUNCIONARIO";
 		}
-		
+
 		else {
 			System.out.println("Não validou");
 			return "Não validou";
-			
+
 		}
 	}
 
@@ -42,7 +41,6 @@ public class LoginFuncionarioBean implements Serializable {
 	public void setLogin(Login login) {
 		this.login = login;
 	}
-	
 
 	public void clear() {
 		this.login = new Login();
@@ -55,8 +53,5 @@ public class LoginFuncionarioBean implements Serializable {
 	public void setLogins(List<Login> logins) {
 		this.logins = logins;
 	}
-	
-	
-	
-	
+
 }

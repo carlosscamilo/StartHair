@@ -28,11 +28,7 @@ public class CadastrarFuncionarioBean implements Serializable {
 		usuario.setPassword(funcionario.getSenha());
 		usuario.setFuncionario(funcionario);
 		funcionario.setUsuario(usuario);
-//	Usuario u = usuarioDAO.buscarPorUsernameAndEmail("Lenore@gmail.com", "123");
-//	System.out.println(u);
-
 		funcionarioDAO.cadastrar(funcionario);
-//		usuarioDAO.cadastrar(usuario);
 
 		System.out.println("Funcionario " + funcionario.getNome() + " cadastrado com sucesso!");
 
@@ -55,6 +51,5 @@ public class CadastrarFuncionarioBean implements Serializable {
 	public void setFuncionario(Funcionario funcionario) {
 		this.funcionario = funcionario;
 	}
-
 
 }

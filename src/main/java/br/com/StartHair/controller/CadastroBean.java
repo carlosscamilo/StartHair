@@ -24,43 +24,34 @@ public class CadastroBean implements Serializable {
 	private ClienteDAO clienteDAO;
 	private UsuarioDAO usuarioDAO;
 	private GenericDAO<Cliente> generic = new GenericDAO<Cliente>();
-	
+
 	private Cliente cliente = new Cliente();
 	private Usuario usuario = new Usuario();
-	 private List<Cliente> clientes = new ArrayList<Cliente>();
-	 private Map clienteItem=null;
-		private ListDataModel model; 
-	
+	private List<Cliente> clientes = new ArrayList<Cliente>();
+	private Map clienteItem = null;
+	private ListDataModel model;
+
 	public String cadastrarCliente() throws Exception {
 
 		this.clienteDAO = new ClienteDAO();
 		this.usuarioDAO = new UsuarioDAO();
-		
+
 		usuario.setUsername(cliente.getEmail());
 		usuario.setPassword(cliente.getSenha());
 		usuario.setCliente(cliente);
 		cliente.setUsuario(usuario);
 
-//		Usuario u = usuarioDAO.buscarPorUsernameAndEmail("Lenore@gmail.com", "123");
-//		System.out.println(u);
-		
 		clienteDAO.cadastrar(cliente);
-		//usuarioDAO.cadastrar(usuario);
 
 		System.out.println("Cliente " + cliente.getNome() + " cadastrado com sucesso!");
-		
-		System.out.println("Usuario " + usuario.getUsername() + 
-		" ," + usuario.getPassword() + 
-		", " + usuario.getCliente() +
-		" cadastrado com sucesso!");
-		
+
+		System.out.println("Usuario " + usuario.getUsername() + " ," + usuario.getPassword() + ", "
+				+ usuario.getCliente() + " cadastrado com sucesso!");
+
 		clear();
 
 		return "GO_LOGIN";
 	}
-	
-	
-	
 
 	public void clear() {
 		this.cliente = new Cliente();
@@ -73,9 +64,11 @@ public class CadastroBean implements Serializable {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+
 	public List<Cliente> getClientes() {
 		return clientes;
 	}
+
 	public void setClientes(List<Cliente> clientes) {
 		this.clientes = clientes;
 	}

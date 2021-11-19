@@ -29,8 +29,9 @@ public class CadastraAgendamentoBean implements Serializable {
 	private ClienteDAO clienteDAO;
 	private List<Agendamento> agendamentos = new ArrayList<Agendamento>();
 
-	public CadastraAgendamentoBean() {}
-	
+	public CadastraAgendamentoBean() {
+	}
+
 	public String agendar() {
 
 		this.clienteDAO = new ClienteDAO();
@@ -57,9 +58,8 @@ public class CadastraAgendamentoBean implements Serializable {
 		return "";
 	}
 
-	
-	/*   PARTE DE LISTAGEM   */
-	
+	/* PARTE DE LISTAGEM */
+
 	@PostConstruct
 	public void listarAgendamentos() {
 		agendamentos = generic.getListEntity(Agendamento.class);
@@ -75,10 +75,10 @@ public class CadastraAgendamentoBean implements Serializable {
 	public String exibirTelaEditar(Integer id) {
 		this.agendamentoDAO = new AgendamentoDAO();
 		this.agendamento = agendamentoDAO.buscarPorId(id);
-	
+
 		System.out.println(agendamento);
 		return "GO_EDITAR";
-	} 
+	}
 
 	public String save() {
 		agendamentoDAO.atualizar(agendamento);

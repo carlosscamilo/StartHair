@@ -40,24 +40,21 @@ public class AgendamentoDAO {
 	public Agendamento buscarPorServico(String servico) {
 		return em.find(Agendamento.class, servico);
 	}
-	
+
 	public Agendamento buscarPorCliente(Cliente cliente) {
 		return em.find(Agendamento.class, cliente);
 	}
-	
-	
+
 	public List<Agendamento> buscarAgendamento() {
 		em.createNativeQuery("from agendamento").getResultList();
 		return em.createQuery("from agendamento").getResultList();
-    }
+	}
 
 	public List<Agendamento> buscarAgendamentos() {
-		
-		Query q = em.createQuery("from agendamento", Agendamento.class);
-		
-		
-		return q.getResultList();
-    }
 
-	
+		Query q = em.createQuery("from agendamento", Agendamento.class);
+
+		return q.getResultList();
+	}
+
 }
