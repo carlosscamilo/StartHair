@@ -6,10 +6,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
-import javax.faces.application.FacesMessage;
-import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
-import javax.faces.model.SelectItem;
 import javax.inject.Named;
 
 import br.com.StartHair.dao.AgendamentoDAO;
@@ -17,6 +14,7 @@ import br.com.StartHair.dao.ClienteDAO;
 import br.com.StartHair.dao.GenericDAO;
 import br.com.StartHair.model.Agendamento;
 import br.com.StartHair.model.Cliente;
+import br.com.StartHair.model.Usuario;
 
 @Named(value = "cadastraAgendamentoBean")
 @SessionScoped
@@ -33,10 +31,9 @@ public class CadastraAgendamentoBean implements Serializable {
 	}
 
 	public String agendar() {
-
-		this.clienteDAO = new ClienteDAO();
-
-		cliente = clienteDAO.buscarPorId(3);
+		Usuario u = (Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuarioLogado");
+		
+		cliente = u.getCliente();
 
 		this.agendamentoDAO = new AgendamentoDAO();
 		agendamento.setCliente(cliente);
@@ -72,12 +69,12 @@ public class CadastraAgendamentoBean implements Serializable {
 		return "";
 	}
 
-	public String exibirTelaEditar(Integer id) {
+	public void exibirTelaEditar(Integer id) {
 		this.agendamentoDAO = new AgendamentoDAO();
 		this.agendamento = agendamentoDAO.buscarPorId(id);
 
 		System.out.println(agendamento);
-		return "GO_EDITAR";
+	
 	}
 
 	public String save() {

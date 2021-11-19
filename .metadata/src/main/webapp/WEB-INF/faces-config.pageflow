@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf16359831936000" configfile="/StartHair/src/main/webapp/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="cadastro.xhtml" x="338" y="178" id="pf16359832759947" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf16359832759948" path="cadastro.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="554" y="370" id="pf16359832759949" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf16359932898581 pf16365059306322 pf16365249155361" inlinks="pf16359832759948 pf16365059130640" path="login.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="770" y="370" id="pf16359932898582" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf16359932898581 pf16365059306322" path="index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="554" y="370" id="pf16359832759949" referenceLink="//@navigationRule.9/@navigationCase.0/@toViewId|" outlinks="pf16359932898581 pf16365059306322 pf16365249155361" inlinks="pf16359832759948 pf16365059130640 pf16372879107050 pf16372879494741" path="login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="770" y="370" id="pf16359932898582" referenceLink="//@navigationRule.9/@fromViewId|" outlinks="pf16372879107050" inlinks="pf16359932898581 pf16365059306322" path="index.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="loginFuncionario.xhtml" x="122" y="562" id="pf16364143415791" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf16364143415792" path="loginFuncionario.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="cadastrarFuncionario.xhtml" x="338" y="562" id="pf16364143415793" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf16365059130640" inlinks="pf16364143415792" path="cadastroFuncionario.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="indexCliente.xhtml" id="pf16365249155362" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" inlinks="pf16365249155361 pf16365748810650" path="indexCliente.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="cadastra-agendamento.xhtml" id="pf16365748810651" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf16365748810650" path="cadastra-agendamento.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="agendamento-list.xhtml" id="pf16372749406100" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf16372749406101" path="agendamento-list.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="listar.xhtml" id="pf16372749406102" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" inlinks="pf16372749406101" path="listar.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="indexCliente.xhtml" id="pf16365249155362" referenceLink="//@navigationRule.9/@fromViewId|" outlinks="pf16372879494741" inlinks="pf16365249155361 pf16365748810650" path="indexCliente.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="cadastra-agendamento.xhtml" id="pf16365748810651" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf16365748810650" path="cadastra-agendamento.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="agendamento-list.xhtml" id="pf16372749406100" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf16372749406101" path="agendamento-list.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="listar.xhtml" id="pf16372749406102" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" inlinks="pf16372749406101" path="listar.xhtml"/>
   <links id="pf16359832759948" target="pf16359832759949" source="pf16359832759947" outcome="GO_LOGIN" redirect="true"/>
   <links id="pf16359932898581" target="pf16359932898582" source="pf16359832759949" outcome="GO_INDEX" redirect="true"/>
   <links id="pf16364143415792" target="pf16364143415793" source="pf16364143415791" outcome="GO_CADFUNCIONARIO" redirect="true"/>
@@ -17,4 +17,6 @@
   <links id="pf16365249155361" target="pf16365249155362" source="pf16359832759949" outcome="TELA_CLI" redirect="true"/>
   <links id="pf16365748810650" target="pf16365249155362" source="pf16365748810651" outcome="cadastrou_agendamento" redirect="true"/>
   <links id="pf16372749406101" target="pf16372749406102" source="pf16372749406100" outcome="GO_EDITAR" redirect="true"/>
+  <links id="pf16372879107050" target="pf16359832759949" source="pf16359932898582" outcome="index_login" redirect="true"/>
+  <links id="pf16372879494741" target="pf16359832759949" source="pf16365249155362" outcome="indexCli_login" redirect="true"/>
 </pageflow:Pageflow>
