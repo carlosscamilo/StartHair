@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
+import br.com.StartHair.model.Cliente;
 import br.com.StartHair.util.JPAUtil;
 
 public class GenericDAO<E> {
@@ -58,5 +59,17 @@ public class GenericDAO<E> {
 		em.getTransaction().commit();
 		return retorno;
 	}
+	
+	public List<E> getListEntityClienteAgendamento(Class<E> entidade) {
+		EntityManager em = JPAUtil.getEntityManager();
+		EntityTransaction et = em.getTransaction();
+		em.getTransaction().begin();
 
+		List<E> retorno = em.createQuery("from " + entidade.getName()).getResultList();
+
+		em.getTransaction().commit();
+		return retorno;
+	}
+	
+	
 }

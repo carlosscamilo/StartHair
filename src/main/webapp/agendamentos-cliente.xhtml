@@ -7,8 +7,8 @@
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Start Hair</title>
-	
-	
+
+
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
 		integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
@@ -24,6 +24,12 @@
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+	<script type="javascript">
+function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
+}
+</script>
 	<h:outputStylesheet library="css" name="index.css" />
 </h:head>
 <h:body>
@@ -72,7 +78,7 @@
 							url="http://localhost:8080/StartHair/carrinho.xhtml" />
 
 						<p:menuitem value="Agendamento"
-							url="http://localhost:8080/StartHair/servicos.xhtml"
+							url="http://localhost:8080/StartHair/cadastra-agendamento.xhtml"
 							icon="pi pi-fw pi-clock" />
 
 
@@ -80,15 +86,10 @@
 
 						<p:submenu label="Listas" icon="pi pi-fw pi-list">
 
-
 							<p:menuitem value="Lista de agendamentos"
 								url="http://localhost:8080/StartHair/agendamentos-cliente.xhtml"
 								icon="pi pi-fw pi-clock" />
 							
-
-
-					
-
 
 
 						</p:submenu>
@@ -125,7 +126,7 @@
 
 			<p:linkButton value="Logout" icon="pi pi-fw pi-sign-out"
 				styleClass="ui-button-info" id="logout_button"
-				href="http://localhost:8080/StartHair/login.xhtml"  />
+				href="http://localhost:8080/StartHair/login.xhtml" />
 
 
 		</div>
@@ -134,41 +135,103 @@
 	</div>
 
 
-<div class="conteudo">
-<h1>Marque seu horário</h1>
-</div>
+	<div class="conteudo">
+		<h1>Lista agendamento</h1>
+		<p id="demo"></p>
 
-<h:form>
-<div class="conteudo">
-		<p:messages id="messagesLogin"/>
-		<div class="container">
-
-		
-		<p:outputLabel value="Informe o serviço" />
-		<p:selectOneMenu value="#{cadastraAgendamentoBean.agendamento.servico}">
-			<f:selectItem itemLabel="Selecione uma opção" itemValue="" />
-			<f:selectItem itemLabel="Cabelo" itemValue="Cabelo" />
-			<f:selectItem itemLabel="Manicure" itemValue="Manicure" />
-			<f:selectItem itemLabel="Pedicure" itemValue="Pedicure" />
-
-		</p:selectOneMenu>
-		
-		
-		
-		
-		<div class="p-field p-col-12 p-md-4">
-	<p:outputLabel value="Informe a data e a hora" />
-			<p:datePicker id="time"
-				value="#{cadastraAgendamentoBean.agendamento.data_agendamento}"
-				showTime="true" />
-		</div>
-		<p:commandButton value="Agendar" action="#{cadastraAgendamentoBean.agendar}" update="messagesLogin" style="background-color: deeppink;" />
 	</div>
-</div>
 
-  
 
-</h:form>
+	<h:form>
+
+
+
+
+	</h:form>
+
+	<h:form id="FormListar">
+		<div class="card">
+
+			<p:dataTable value="#{clienteBean.agendamentos}" var="a">
+				<p:column headerText="Id">
+					<h:outputText value="#{a.id}" />
+				</p:column>
+				<p:column headerText="Cliente">
+					<h:outputText value="#{a.cliente.nome}" />
+				</p:column>
+				<p:column headerText="Serviço">
+					<h:outputText value="#{a.servico}" />
+
+
+
+				</p:column>
+				<p:column headerText="Data agendamento">
+					<h:outputText value="#{a.data_agendamento}" />
+
+				</p:column>
+				<p:column headerText="">
+					<p:commandButton icon="pi pi-pencil" update="@form formEdicao"
+						actionListener="#{cadastraAgendamentoBean.exibirTelaEditar(a.id)}"
+						
+						style="background-color: deeppink;" process="@this"
+						oncomplete="PF('dlg').show();" title="Editar" />
+				</p:column>
+				<p:column headerText="">
+					<p:commandButton icon="pi pi-trash" update="@form" 
+					    								process="@this"
+					    								title="Remover"
+														actionListener="#{cadastraAgendamentoBean.deletar(a)}"
+														style="background-color: deeppink;" 
+														 />
+				</p:column>
+
+
+
+			</p:dataTable>
+		</div>
+
+	</h:form>
+
+
+	<p:dialog header="Edição" widgetVar="dlg" resizable="false"
+		modal="true" width="50%" height="100%">
+		<h:form id="formEdicao" prependId="false">
+			<p:growl id="growl" />
+			<div align="center">
+				<p:panelGrid columns="2">
+					<p:outputLabel value="ID" />
+					<p:outputLabel value="#{cadastraAgendamentoBean.agendamento.id}" />
+					<p:outputLabel value="nome" />
+					<p:inputText
+						value="#{cadastraAgendamentoBean.agendamento.cliente.nome}"
+						size="20" readonly="true" />
+					<p:outputLabel value="Informe o serviço" for="txtServ" />
+					<p:selectOneMenu
+						value="#{cadastraAgendamentoBean.agendamento.servico}" size="50"
+						placeholder="Obrigatório" id="txtServ">
+						<f:selectItem itemLabel="Selecione uma opção" itemValue="" />
+						<f:selectItem itemLabel="Cabelo" itemValue="Cabelo" />
+						<f:selectItem itemLabel="Manicure" itemValue="Manicure" />
+						<f:selectItem itemLabel="Pedicure" itemValue="Pedicure" />
+					</p:selectOneMenu>
+					<p:outputLabel value="Data agendamento" for="time" />
+					<p:datePicker id="time"
+						value="#{cadastraAgendamentoBean.agendamento.data_agendamento}"
+						showTime="true" size="50" />
+				</p:panelGrid>
+			</div>
+			<p:panel>
+				<div align="center">
+					<p:commandButton value="Salvar" icon="pi pi-safe"
+						actionListener="#{cadastraAgendamentoBean.save()}"
+						update="formEdicao FormListar"
+						oncomplete="if (!args.validationFailed){PF('dlg').hide();}" />
+				</div>
+			</p:panel>
+
+		</h:form>
+	</p:dialog>
+
 
 </h:body>
 
