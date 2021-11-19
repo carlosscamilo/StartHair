@@ -1,6 +1,5 @@
 package br.com.StartHair.dao;
 
-import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -23,8 +22,10 @@ public class AgendamentoDAO {
 	}
 
 	public void atualizar(Agendamento agendamento) {
-		
+		em.getTransaction().begin();
 		this.em.merge(agendamento);
+		em.flush();
+		em.getTransaction().commit();
 	}
 
 	public void remover(Agendamento agendamento) {

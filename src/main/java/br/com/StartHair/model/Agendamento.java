@@ -9,32 +9,29 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 @Entity(name = "agendamento")
 @Table(name="agendamento")
 public class Agendamento implements Serializable {
-
-	 
-	
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
+	@JoinColumn(name="cliente_id")
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
     private Cliente cliente;
-	  @Column
+	
+	@Column
     private String servico;
-    @Column(unique = true)
+    
+	@Column(unique = true)
     private LocalDateTime data_agendamento;
-    @Transient
-    private transient boolean editing;
 
-    
-    
     public Agendamento() {
 		super();
 	}
@@ -79,13 +76,7 @@ public class Agendamento implements Serializable {
 		this.data_agendamento = data_agendamento;
 	}
 
-	public boolean isEditing() {
-		return editing;
-	}
 
-	public void setEditing(boolean editing) {
-		this.editing = editing;
-	}
 
 	@Override
 	public String toString() {

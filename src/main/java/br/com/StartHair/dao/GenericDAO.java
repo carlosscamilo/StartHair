@@ -40,6 +40,7 @@ public class GenericDAO<E> {
 	
 	
 	public void deletePorId(E entidade) {
+		
 		EntityManager em = JPAUtil.getEntityManager();
 		EntityTransaction et = em.getTransaction();
 		
